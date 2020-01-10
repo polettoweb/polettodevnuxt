@@ -10,17 +10,17 @@
           <span class="leading-tight">Hi, I'm Marco,</span>
           <br />
           <span class="text-blue-700 leading-tight typer-wrapper">
-            <!-- <ClientOnly> -->
-            <Vue-typer
-              :text="role"
-              :repeat="Infinity"
-              :type-delay="100"
-              :erase-delay="20"
-              :pre-erase-delay="1500"
-              :shuffle="true"
-              erase-style="backspace"
-            />
-            <!-- </ClientOnly> -->
+            <client-only>
+              <Vue-typer
+                :text="role"
+                :repeat="Infinity"
+                :type-delay="100"
+                :erase-delay="20"
+                :pre-erase-delay="1500"
+                :shuffle="true"
+                erase-style="backspace"
+              />
+            </client-only>
           </span>
         </h1>
       </div>

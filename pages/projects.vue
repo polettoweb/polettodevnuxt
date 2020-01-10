@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     openModal(e) {
-      console.log(e.target)
+      // console.log(e.target)
     }
   }
 }

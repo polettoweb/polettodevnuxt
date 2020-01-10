@@ -1,3 +1,6 @@
+const path = require('path')
+const Mode = require('frontmatter-markdown-loader/mode')
+
 export default {
   mode: 'spa',
   /*
@@ -40,7 +43,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/pwa'],
+  modules: ['@nuxtjs/pwa', '@nuxtjs/style-resources'],
   /*
    ** Build configuration
    */
@@ -48,6 +51,16 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {
+      // add frontmatter-markdown-loader
+      config.module.rules.push({
+        test: /\.md$/,
+        include: path.resolve(__dirname, 'blog'),
+        loader: 'frontmatter-markdown-loader',
+        options: {
+          mode: [Mode.VUE_COMPONENT, Mode.META]
+        }
+      })
+    }
   }
 }

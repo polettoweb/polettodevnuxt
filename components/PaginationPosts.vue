@@ -20,7 +20,20 @@
 
 <script>
 export default {
-  props: ['base', 'totalPages', 'currentPage'],
+  props: {
+    base: {
+      type: Number,
+      required: true
+    },
+    totalPages: {
+      type: Number,
+      required: true
+    },
+    currentPage: {
+      type: Number,
+      required: true
+    }
+  },
   computed: {
     showPreviousPage() {
       return this.currentPage !== 1

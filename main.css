@@ -57,13 +57,9 @@
   transition: background-color 0.25s;
 }
 
-/* a {
+a {
   @apply text-blue-700 font-bold;
-} */
-
-/* a:hover {
-  @apply text-copy-secondary;
-} */
+}
 
 nav .active:not(.home) {
   font-weight: bold;
@@ -149,13 +145,13 @@ nav .active--exact.home {
   overflow-x: hidden;
 }
 
-/* .vue-typer .custom.char.typed {
+.vue-typer .custom.char.typed {
   @apply leading-tight text-6xl;
 }
 
 .vue-typer .custom.char.selected {
   @apply text-blue-700 leading-tight text-6xl;
-} */
+}
 
 .typer-wrapper {
   display: block;

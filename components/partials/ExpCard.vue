@@ -29,7 +29,8 @@ export default {
     },
     location: {
       type: String,
-      required: false
+      required: false,
+      default: ''
     },
     date: {
       type: String,
