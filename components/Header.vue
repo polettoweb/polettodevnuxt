@@ -34,8 +34,10 @@
           >
         </li>
         <li class="mr-8 mb-6 lg:mb-0">
-          <nuxt-link to="/blog" class="text-copy-primary hover:text-blue-600"
-            >Blog</nuxt-link
+          <nuxt-link
+            to="/articles"
+            class="text-copy-primary hover:text-blue-600"
+            >Articles</nuxt-link
           >
         </li>
         <li class="mr-8 mb-6 lg:mb-0">

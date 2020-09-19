@@ -1,9 +1,9 @@
 ---
 title: How to create animated multicolour border on element
-path: blog/animated-border-color
+path: article/animated-border-color
 date: 2019-07-19
 summary: Here a quick example of how you can create an animated multi colour border effect to you element using CSS only
-tags: ["CSS", "SASS", "frontend", "animation"]
+tags: ['CSS', 'SASS', 'frontend', 'animation']
 ---
 
 Here a quick example of how you can create an animated multi colour border effect to you element using CSS only
@@ -81,14 +81,14 @@ now let's style the div thagt we called .box
 
 the result vary based on the colours you're gonna chose, but it should look like something like this:
 
-![animated1](./images/animated-border-1.png)
+![animated1](/articles/animated-border-1.png)
 
 Now we'll cover the unecessary color for giving the border effect. for doing that we are using the pseudo element "before". If you want to learn more about pseudo elements, please refer to [pseudo-elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements)
 
 ```css
 /* style.css */
 .box&:before {
-  content: "";
+  content: '';
   width: calc(100% - 2px);
   height: calc(100% - 2px);
   background-color: #111;
@@ -97,7 +97,7 @@ Now we'll cover the unecessary color for giving the border effect. for doing tha
 
 and this should be the result now
 
-![animated1](./images/animated-border-2.png)
+![animated1](/articles/animated-border-2.png)
 
 One last step missing. If we want to make the border move, we have to animate it using keyframes.
 

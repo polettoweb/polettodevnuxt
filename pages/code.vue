@@ -1,44 +1,42 @@
 <template>
-  <Layout>
-    <div class="container-inner mx-auto py-16">
-      <div
-        v-for="code in codeData"
-        :key="code.title"
-        class="border-gray-400 border-b mb-12 flex justify-between w-4/5 mx-auto"
-      >
-        <div class="w-1/5 flex justify-start items-center">
-          <codepen v-if="code.type === 'codepen'" />
-          <codesandbox v-if="code.type === 'codesandbox'" />
-          <github v-if="code.type === 'github'" />
-        </div>
-        <div class="post w-4/5">
-          <h2 class="text-3xl font-bold">
-            <a
-              :href="code.link"
-              :title="code.title"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-copy-primary hover:text-blue-700"
-              >{{ code.title }}</a
-            >
-          </h2>
+  <div class="container-inner mx-auto py-16">
+    <div
+      v-for="code in codeData"
+      :key="code.title"
+      class="border-gray-400 border-b mb-12 flex justify-between w-4/5 mx-auto"
+    >
+      <div class="w-1/5 flex justify-start items-center">
+        <codepen v-if="code.type === 'codepen'" />
+        <codesandbox v-if="code.type === 'codesandbox'" />
+        <github v-if="code.type === 'github'" />
+      </div>
+      <div class="post w-4/5">
+        <h2 class="text-3xl font-bold">
+          <a
+            :href="code.link"
+            :title="code.title"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-copy-primary hover:text-blue-700"
+            >{{ code.title }}</a
+          >
+        </h2>
 
-          <div class="text-lg mb-4">{{ code.content }}</div>
-          <div class="mb-8">
-            <a
-              :href="code.link"
-              :title="code.link"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="font-bold uppercase"
-              >View Code</a
-            >
-          </div>
+        <div class="text-lg mb-4">{{ code.content }}</div>
+        <div class="mb-8">
+          <a
+            :href="code.link"
+            :title="code.link"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-bold uppercase"
+            >View Code</a
+          >
         </div>
       </div>
-      <!-- end post -->
     </div>
-  </Layout>
+    <!-- end post -->
+  </div>
 </template>
 
 <script>

@@ -10,7 +10,7 @@
           <span class="leading-tight">Hi, I'm Marco,</span>
           <br />
           <span class="text-blue-700 leading-tight typer-wrapper">
-            <client-only>
+            <client-only placeholder="Frontend Developer">
               <Vue-typer
                 :text="role"
                 :repeat="Infinity"
@@ -47,14 +47,13 @@
             I am a passionate frontend developer and mentor based in Amsterdam.
             I am originally from Venice and I love to work with JavaScript, CSS
             and everything around user interfaces. I am using daily VueJS,
-            GraphQL and Sass for a wonderful company in the southeast of
-            Amsterdam. I've started my career with HTML 3.0, CSS(1) and
-            FireWorks. My goal is to build clean, performant and accessible user
-            interfaces where the right user experience is a focal point. My job
-            is also my passion and, therefore, seeking out new technologies and
-            stay up-to-date on industry trends and advancements is more a
-            pleasure than a duty. Helping trainee and Junior developers to grow
-            and learn is a major part of my job and my personal mission.
+            GraphQL and Sass for a consultancy in the center of Amsterdam. My
+            goal is to build clean, performant and accessible user interfaces
+            where the right user experience is a focal point. Helping trainee
+            and Junior developers to grow and learn is a major part of my job
+            and my personal mission. My job is also my passion and, therefore,
+            seeking out new technologies and stay up-to-date on industry trends
+            and advancements is more a pleasure than a duty.
           </div>
         </div>
       </div>

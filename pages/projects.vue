@@ -1,25 +1,23 @@
 <template>
-  <Layout>
-    <div>
+  <div>
+    <div
+      class="container-inner mx-auto flex flex-row justify-center items-center flex-wrap"
+    >
       <div
-        class="container-inner mx-auto flex flex-row justify-center items-center flex-wrap"
+        v-for="item in projectData"
+        :key="item.id"
+        @click="openModal"
+        class="w-1/4 h-80 mx-2 my-2 px-5 py-5 bg-blue-800 hover:bg-blue-900"
+        data-cy="portfolio__img"
       >
         <div
-          v-for="item in projectData"
-          :key="item.id"
-          @click="openModal"
-          class="w-1/4 h-80 mx-2 my-2 px-5 py-5 bg-blue-800 hover:bg-blue-900"
-          data-cy="portfolio__img"
+          class="border border-white flex flex-col justify-center items-center h-full relative"
         >
-          <div
-            class="border border-white flex flex-col justify-center items-center h-full relative"
-          >
-            <img :src="`/${item.src}`" :alt="item.alt" class="mx-auto" />
-          </div>
+          <img :src="`/${item.src}`" :alt="item.alt" class="mx-auto" />
         </div>
       </div>
     </div>
-  </Layout>
+  </div>
 </template>
 
 <script>

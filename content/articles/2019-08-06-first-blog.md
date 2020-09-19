@@ -1,9 +1,9 @@
 ---
 title: How to create simple tabs system with VueJS
-path: blog/vuejs-tabs
+path: article/vuejs-tabs
 date: 2019-08-06
 summary: Today I want to share with you and easy way to build a simple tab system using VueJS.
-tags: ["javascript", "frontend", "vuejs"]
+tags: ['javascript', 'frontend', 'vuejs']
 ---
 
 Today I want to share with you and easy way to build a simple tab system using VueJS.

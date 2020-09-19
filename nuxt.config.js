@@ -1,8 +1,5 @@
-const path = require('path')
-const Mode = require('frontmatter-markdown-loader/mode')
-
 export default {
-  mode: 'spa',
+  SSR: true,
   /*
    ** Headers of the page
    */
@@ -43,7 +40,27 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/pwa', '@nuxtjs/style-resources'],
+  modules: ['@nuxtjs/pwa', '@nuxtjs/style-resources', '@nuxt/content'],
+  content: {},
+  hooks: {
+    'content:file:beforeInsert': (document) => {
+      if (document.extension === '.md') {
+        const { time } = require('reading-time')(document.text)
+
+        document.readingTime = time
+      }
+    }
+  },
+  generate: {
+    async routes() {
+      const { $content } = require('@nuxt/content')
+      const files = await $content({ deep: true })
+        .only(['path'])
+        .fetch()
+
+      return files.map((file) => (file.path === '/index' ? '/' : file.path))
+    }
+  },
   /*
    ** Build configuration
    */
@@ -51,16 +68,6 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {
-      // add frontmatter-markdown-loader
-      config.module.rules.push({
-        test: /\.md$/,
-        include: path.resolve(__dirname, 'blog'),
-        loader: 'frontmatter-markdown-loader',
-        options: {
-          mode: [Mode.VUE_COMPONENT, Mode.META]
-        }
-      })
-    }
+    extend(config, ctx) {}
   }
 }

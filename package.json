@@ -1,7 +1,7 @@
 {
-  "name": "marco",
-  "version": "1.0.0",
-  "description": "My slick Nuxt.js project",
+  "name": "polettodev",
+  "version": "2.0.0",
+  "description": "Poletto.dev",
   "author": "Marco Poletto",
   "private": true,
   "scripts": {
@@ -13,23 +13,25 @@
     "lint-fix": "eslint --ext .js,.vue --ignore-path .gitignore . --fix"
   },
   "dependencies": {
-    "@nuxtjs/pwa": "^3.0.0-0",
+    "@nuxt/content": "^1.9.0",
+    "@nuxtjs/pwa": "^3.0.2",
     "@nuxtjs/style-resources": "^1.0.0",
-    "frontmatter-markdown-loader": "^3.1.0",
-    "node-sass": "^4.13.0",
-    "nuxt": "^2.0.0",
-    "sass-loader": "^8.0.0",
+    "frontmatter-markdown-loader": "^3.6.0",
+    "node-sass": "^4.14.1",
+    "nuxt": "^2.14.5",
+    "reading-time": "^1.2.0",
+    "sass-loader": "^8.0.2",
     "vue-typer": "^1.2.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",
-    "@nuxtjs/eslint-module": "^1.0.0",
-    "@nuxtjs/tailwindcss": "^1.0.0",
-    "babel-eslint": "^10.0.1",
+    "@nuxtjs/eslint-module": "^1.2.0",
+    "@nuxtjs/tailwindcss": "^1.4.1",
+    "babel-eslint": "^10.1.0",
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^4.1.0",
-    "eslint-plugin-nuxt": ">=0.4.2",
-    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-nuxt": "^1.0.0",
+    "eslint-plugin-prettier": "^3.1.4",
     "prettier": "^1.16.4"
   }
 }
