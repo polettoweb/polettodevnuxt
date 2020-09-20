@@ -1,23 +1,27 @@
 <template>
-  <div class="container-inner mx-auto my-16 bg-background-secondary">
-    <h1 class="text-4xl font-bold leading-tight">{{ article.title }}</h1>
-    <div class="text-xl text-gray-600 mb-4">{{ article.date }}</div>
-    <p>{{ article.description }}</p>
-    <nuxt-content :document="article" class="markdown-body mb-8" />
-    <div class="flex mb-8 text-sm">
-      <nuxt-link
-        v-if="prev"
-        :to="{ name: 'articles-slug', params: { slug: prev.slug } }"
-        >&lt; {{ prev.title }}</nuxt-link
-      >&nbsp;|
-      <nuxt-link
-        v-if="next"
-        :to="{ name: 'articles-slug', params: { slug: next.slug } }"
-        >{{ next.title }} &gt;</nuxt-link
-      >
-    </div>
-    <div class="mb-8">
-      <nuxt-link to="/articles" class="font-bold uppercase">Articles</nuxt-link>
+  <div class="container-inner mx-auto my-16 article-container">
+    <div class="py-8 px-10">
+      <h1 class="text-4xl font-bold leading-tight">{{ article.title }}</h1>
+      <div class="text-xl text-gray-600 mb-4">{{ article.date }}</div>
+      <p>{{ article.description }}</p>
+      <nuxt-content :document="article" class="markdown-body mb-8" />
+      <div class="flex justify-center mb-8 text-sm">
+        <nuxt-link
+          v-if="prev"
+          :to="{ name: 'articles-slug', params: { slug: prev.slug } }"
+          >&lt; {{ prev.title }}</nuxt-link
+        >&nbsp;|
+        <nuxt-link
+          v-if="next"
+          :to="{ name: 'articles-slug', params: { slug: next.slug } }"
+          >{{ next.title }} &gt;</nuxt-link
+        >
+      </div>
+      <div class="mb-8">
+        <nuxt-link to="/articles" class="font-bold uppercase"
+          >Back to articles</nuxt-link
+        >
+      </div>
     </div>
   </div>
 </template>
@@ -76,3 +80,9 @@ export default {
   }
 }
 </script>
+<style>
+.article-container {
+  background: var(--bg-background-secondary);
+  /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); */
+}
+</style>

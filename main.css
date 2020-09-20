@@ -9,6 +9,7 @@
   --bg-background-gradient-start: #e2e8f0;
   --bg-background-form: #ffffff;
 
+  --text-highlight: #9f7aea;
   --text-copy-primary: #2d3748;
   --text-copy-secondary: #4a5568;
 
@@ -42,7 +43,7 @@
   --bg-background-gradient-start: #2c5282;
 
   --bg-background-form: #1a202c;
-
+  --text-highlight: #9f7aea;
   --text-copy-primary: #cbd5e0;
   --text-copy-secondary: #e2e8f0;
 
@@ -143,6 +144,7 @@ nav .active--exact.home {
   height: 80%;
   pointer-events: none;
   overflow-x: hidden;
+  opacity: 0.6;
 }
 
 .vue-typer .custom.char.typed {
