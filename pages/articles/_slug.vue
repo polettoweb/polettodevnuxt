@@ -2,9 +2,22 @@
   <div class="container-inner mx-auto my-16 article-container">
     <div class="py-8 px-10">
       <h1 class="text-4xl font-bold leading-tight">{{ article.title }}</h1>
-      <div class="text-xl text-gray-600 mb-4">{{ article.date }}</div>
-      <p>{{ article.description }}</p>
+      <div class="text-xl text-gray-600 mb-4">
+        {{ formatDate(article.date) }} -
+        {{ formatTime(article.readingTime) }} min read
+      </div>
+      <nuxt-link
+        to="/"
+        v-for="tag in article.tags"
+        :key="tag"
+        class="bg-gray-300 rounded-full px-4 py-2 mr-4 hover:bg-green-300"
+      >
+        {{ tag }}
+      </nuxt-link>
       <nuxt-content :document="article" class="markdown-body mb-8" />
+      <div class="separator">
+        <img src="@/assets/images/logo.svg" />
+      </div>
       <div class="flex justify-center mb-8 text-sm">
         <nuxt-link
           v-if="prev"
@@ -77,12 +90,41 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    formatDate(date) {
+      const options = { year: 'numeric', month: 'long', day: 'numeric' }
+      return new Date(date).toLocaleDateString('gb', options)
+    },
+    formatTime(time) {
+      return Math.ceil(time / 60000)
+    }
   }
 }
 </script>
-<style>
+<style lang="scss">
 .article-container {
   background: var(--bg-background-secondary);
-  /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); */
+}
+
+.markdown-body ul {
+  list-style-type: disc;
+  padding-left: 2em;
+
+  li {
+    margin: 1em 0;
+  }
+}
+
+.separator {
+  width: 40%;
+  height: auto;
+  margin: 0 auto 2em;
+
+  img {
+    width: 50%;
+    margin: 0 auto;
+    opacity: 0.5;
+  }
 }
 </style>
