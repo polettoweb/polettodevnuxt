@@ -22,18 +22,18 @@
       <div class="flex justify-center mb-8 text-sm">
         <nuxt-link
           v-if="prev"
-          :to="{ name: 'articles-slug', params: { slug: prev.slug } }"
+          :to="{ name: 'blog-slug', params: { slug: prev.slug } }"
           >&lt; {{ prev.title }}</nuxt-link
         >&nbsp;|
         <nuxt-link
           v-if="next"
-          :to="{ name: 'articles-slug', params: { slug: next.slug } }"
+          :to="{ name: 'blog-slug', params: { slug: next.slug } }"
           >{{ next.title }} &gt;</nuxt-link
         >
       </div>
       <div class="mb-8">
-        <nuxt-link to="/articles" class="font-bold uppercase"
-          >Back to articles</nuxt-link
+        <nuxt-link to="/blog" class="font-bold uppercase"
+          >Back to blog</nuxt-link
         >
       </div>
     </div>
