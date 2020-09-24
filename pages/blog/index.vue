@@ -27,43 +27,22 @@
         </div>
       </div>
       <!-- end article -->
-      <!-- <pagination-posts
-        v-if="articles.length / 5 > 1"
-        :totalPages="Math.ceil(articles.length / 5)"
-        :currentPage="1"
-        base="/articles"
-      /> -->
-      <div class="flex justify-between text-xl items-center">
-        <span
-          @click="enablePrevPagination"
-          :class="{
-            'text-gray-400 hover:text-gray-400 cursor-not-allowed': page <= 1
-          }"
-        >
-          &larr; Prev
-        </span>
-        <div class="text-base">
-          Page {{ page + 1 }} of {{ Math.ceil(articles.length / 5) }}
-        </div>
-        <span
-          @click="enableNextPagination"
-          :class="{
-            'text-gray-400 hover:text-gray-400 cursor-not-allowed':
-              page >= Math.ceil(articles.length / 5) - 1
-          }"
-        >
-          Next &rarr;
-        </span>
-      </div>
+      <Pagination
+        :length="articles.length"
+        :page="page"
+        :onPrev="enablePrevPagination"
+        :onNext="enableNextPagination"
+      />
     </div>
   </div>
 </template>
 
 <script>
-// import PaginationPosts from '../../components/PaginationPosts'
+import Pagination from '@/components/partials/Pagination'
 export default {
-  // components: { PaginationPosts },
-  watchQuery: ['page'],
+  components: {
+    Pagination
+  },
   data() {
     return {
       page: 0
@@ -71,7 +50,7 @@ export default {
   },
 
   async asyncData({ $content, route }) {
-    const articles = await $content('articles', { deep: true })
+    const articles = await $content('blog', { deep: true })
       .sortBy('date', 'desc')
       .fetch()
     return { articles }
@@ -93,7 +72,7 @@ export default {
       return Math.ceil(time / 60000)
     },
     async fetchArticles() {
-      this.articles = await this.$content('articles', { deep: true })
+      this.articles = await this.$content('blog', { deep: true })
         .sortBy('createdAt', 'asc')
         .limit(5)
         .skip(this.page * 5 + 5)

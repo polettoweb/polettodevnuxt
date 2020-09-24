@@ -6,14 +6,15 @@
         {{ formatDate(article.date) }} -
         {{ formatTime(article.readingTime) }} min read
       </div>
-      <nuxt-link
-        to="/"
-        v-for="tag in article.tags"
-        :key="tag"
-        class="bg-gray-300 rounded-full px-4 py-2 mr-4 hover:bg-green-300"
-      >
-        {{ tag }}
-      </nuxt-link>
+      <div class="py-6">
+        <span
+          v-for="tag in article.tags"
+          :key="tag"
+          class="bg-gray-300 text-blue-700 font-bold rounded-full px-4 py-2 mr-4 hover:bg-green-300"
+        >
+          {{ tag }}
+        </span>
+      </div>
       <nuxt-content :document="article" class="markdown-body mb-8" />
       <div class="separator">
         <img src="@/assets/images/logo.svg" />
@@ -45,12 +46,11 @@ export default {
   async asyncData({ $content, params, error }) {
     let article
     try {
-      article = await $content('articles', params.slug).fetch()
-      // OR const article = await $content(`articles/${params.slug}`).fetch()
+      article = await $content('blog', params.slug).fetch()
     } catch (e) {
       error({ message: 'Article not found' })
     }
-    const [prev, next] = await $content('articles')
+    const [prev, next] = await $content('blog')
       .only(['title', 'slug'])
       .sortBy('date', 'desc')
       .surround(params.slug)
