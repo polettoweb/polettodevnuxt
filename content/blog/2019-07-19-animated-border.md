@@ -3,7 +3,7 @@ title: How to create animated multicolour border on element
 path: blog/animated-border-color
 date: 2019-07-19
 summary: Here a quick example of how you can create an animated multi colour border effect to you element using CSS only
-tags: ['CSS', 'SASS', 'frontend', 'animation']
+tags: ['css', 'scss', 'frontend', 'animation']
 ---
 
 Here a quick example of how you can create an animated multi colour border effect to you element using CSS only

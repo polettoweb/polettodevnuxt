@@ -63,20 +63,29 @@
       </div>
     </div>
     <!-- end hero -->
-    <div class="container-inner mx-auto">
-      <div class="flex flex-row items-center justify-center py-16">
-        <h2 id="projects" class="w-2/5 font-bold text-4xl mb-6 text-left">
-          Latest from blog
-        </h2>
-      </div>
+    <div class="flex flex-row items-center justify-center py-16">
+      <h2 id="projects" class="w-2/5 font-bold text-4xl mb-6 text-center">
+        Latest from blog
+      </h2>
+    </div>
+    <div class="container-inner mx-auto flex flex-row flex-wrap justify-left">
       <div
-        v-for="post in posts"
-        :key="post.id"
-        class="post border-gray-400 border-b mb-12"
+        v-for="article in articles"
+        :key="article.id"
+        class="post border-gray-400 border-b mb-12 mx-12 w-full"
       >
-        <h2 class="text-3xl font-bold">{{ post.title }}</h2>
-
-        <div class="text-lg mb-4">{{ post.content }}</div>
+        <h2 class="text-3xl font-bold">
+          <nuxt-link
+            :to="article.path"
+            class="text-copy-primary hover:text-blue-700"
+            >{{ article.title }}</nuxt-link
+          >
+        </h2>
+        <div class="text-copy-secondary mb-4">
+          <span>{{ formatDate(article.date) }}</span>
+          <span>&middot;</span>
+          <span>{{ formatTime(article.readingTime) }} min read</span>
+        </div>
       </div>
     </div>
   </div>
@@ -114,37 +123,23 @@ export default {
         'Gamer',
         'Mentor',
         'Pizza lover'
-      ],
-      posts: [
-        {
-          title: 'Copy text on click with JS',
-          content:
-            'Copy on click some hex value on colored swatches using vanilla JS.',
-          link: 'https://codepen.io/polettoweb/pen/KjazEZ',
-          type: 'codepen'
-        },
-        {
-          title: 'How to create simple tabs system with VueJS',
-          content: 'Easy way to build a simple tab system using VueJS.',
-          link: 'https://github.com/polettoweb/vue-tabs',
-          type: 'codesandbox'
-        },
-        {
-          title:
-            "Automatically switch text color based on background's brightness",
-          content:
-            "quick example of how you can programmatically change text color, for example of a button, based on the element's background color.",
-          link: 'https://codepen.io/polettoweb/pen/WqZbVJ',
-          type: 'github'
-        },
-        {
-          title: 'How to create animated multicolour border on element',
-          content:
-            'a quick example of how you can create an animated multi colour border effect to you element using CSS only',
-          link: 'https://codepen.io/polettoweb/pen/NQPypa',
-          type: 'codepen'
-        }
       ]
+    }
+  },
+  async asyncData({ $content, route }) {
+    const articles = await $content('blog', { deep: true })
+      .sortBy('date', 'desc')
+      .limit(3)
+      .fetch()
+    return { articles }
+  },
+  methods: {
+    formatDate(date) {
+      const options = { year: 'numeric', month: 'long', day: 'numeric' }
+      return new Date(date).toLocaleDateString('gb', options)
+    },
+    formatTime(time) {
+      return Math.ceil(time / 60000)
     }
   }
 }
