@@ -99,18 +99,25 @@ export default {
       { charset: 'utf-8' },
       {
         name: 'viewport',
-        content: 'width=device-width, initial-scale=1'
+        content: 'width=device-width, initial-scale=1',
       },
       { name: 'author', content: 'Marco Poletto Web Developer' },
       {
         name: 'description',
         content:
-          'Marco Poletto Frontend Web Developer, UI Engineer, Tech enthusiast, Coffee aficionado, Gamer, mentor, tutor'
-      }
-    ]
+          'Marco Poletto Frontend Web Developer, UI Engineer, Tech enthusiast, Coffee aficionado, Gamer, mentor, tutor',
+      },
+    ],
   },
   components: {
-    VueTyper: () => import('vue-typer').then((m) => m.VueTyper)
+    VueTyper: () => import('vue-typer').then((m) => m.VueTyper),
+  },
+  async asyncData({ $content, route }) {
+    const articles = await $content('blog', { deep: true })
+      .sortBy('date', 'desc')
+      .limit(3)
+      .fetch()
+    return { articles }
   },
   data() {
     return {
@@ -122,16 +129,9 @@ export default {
         'Tutor',
         'Gamer',
         'Mentor',
-        'Pizza lover'
-      ]
+        'Pizza lover',
+      ],
     }
-  },
-  async asyncData({ $content, route }) {
-    const articles = await $content('blog', { deep: true })
-      .sortBy('date', 'desc')
-      .limit(3)
-      .fetch()
-    return { articles }
   },
   methods: {
     formatDate(date) {
@@ -140,8 +140,8 @@ export default {
     },
     formatTime(time) {
       return Math.ceil(time / 60000)
-    }
-  }
+    },
+  },
 }
 </script>
 <style lang="scss">

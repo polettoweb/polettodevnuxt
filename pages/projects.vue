@@ -6,9 +6,9 @@
       <div
         v-for="item in projectData"
         :key="item.id"
-        @click="openModal"
         class="w-1/4 h-80 mx-2 my-2 px-5 py-5 bg-blue-800 hover:bg-blue-900"
         data-cy="portfolio__img"
+        @click="openModal"
       >
         <div
           class="border border-white flex flex-col justify-center items-center h-full relative"
@@ -25,13 +25,13 @@ import projectData from '../assets/json/projects.json'
 export default {
   data() {
     return {
-      projectData
+      projectData,
     }
   },
   methods: {
     openModal(e) {
       // console.log(e.target)
-    }
-  }
+    },
+  },
 }
 </script>

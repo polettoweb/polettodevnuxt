@@ -1,27 +1,27 @@
 <template>
   <div v-if="length > 5" class="flex justify-between text-xl items-center">
     <span
-      @click="onPrev"
       :class="[
         'pagination',
         {
           'text-gray-400 hover:text-gray-400 cursor-not-allowed disabled':
-            page < 1
-        }
+            page < 1,
+        },
       ]"
+      @click="onPrev"
     >
       &larr; PREV
     </span>
     <div class="text-base">{{ page + 1 }} of {{ Math.ceil(length / 5) }}</div>
     <span
-      @click="onNext"
       :class="[
         'pagination',
         {
           'text-gray-400 hover:text-gray-400 cursor-not-allowed disabled':
-            page >= Math.floor(length / 5)
-        }
+            page >= Math.floor(length / 5),
+        },
       ]"
+      @click="onNext"
     >
       NEXT &rarr;
     </span>
@@ -33,21 +33,21 @@ export default {
   props: {
     length: {
       type: Number,
-      required: true
+      required: true,
     },
     page: {
       type: Number,
-      required: true
+      required: true,
     },
     onNext: {
       type: Function,
-      required: true
+      required: true,
     },
     onPrev: {
       type: Function,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>
 

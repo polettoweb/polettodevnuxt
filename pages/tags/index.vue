@@ -21,9 +21,13 @@
 
 <script>
 export default {
+  async asyncData({ $content, route }) {
+    const articles = await $content('blog', { deep: true }).only('tags').fetch()
+    return { articles }
+  },
   data() {
     return {
-      page: 0
+      page: 0,
     }
   },
   computed: {
@@ -34,18 +38,12 @@ export default {
       })
       filtered = this.removeDuplicates(filtered)
       return filtered
-    }
-  },
-  async asyncData({ $content, route }) {
-    const articles = await $content('blog', { deep: true })
-      .only('tags')
-      .fetch()
-    return { articles }
+    },
   },
   methods: {
     removeDuplicates(array) {
       return array.filter((a, b) => array.indexOf(a) === b)
-    }
-  }
+    },
+  },
 }
 </script>

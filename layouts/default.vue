@@ -37,11 +37,11 @@ export default {
   components: {
     Header,
     Footer,
-    ThemeSwitcher
+    ThemeSwitcher,
   },
   data() {
     return {
-      theme: ''
+      theme: '',
     }
   },
   mounted() {
@@ -50,8 +50,8 @@ export default {
   methods: {
     updateTheme(theme) {
       this.theme = theme
-    }
-  }
+    },
+  },
 }
 </script>
 

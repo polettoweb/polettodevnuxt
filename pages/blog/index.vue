@@ -30,8 +30,8 @@
       <Pagination
         :length="articles.length"
         :page="page"
-        :onPrev="enablePrevPagination"
-        :onNext="enableNextPagination"
+        :on-prev="enablePrevPagination"
+        :on-next="enableNextPagination"
       />
     </div>
   </div>
@@ -41,12 +41,7 @@
 import Pagination from '@/components/partials/Pagination'
 export default {
   components: {
-    Pagination
-  },
-  data() {
-    return {
-      page: 0
-    }
+    Pagination,
   },
 
   async asyncData({ $content, route }) {
@@ -54,6 +49,11 @@ export default {
       .sortBy('date', 'desc')
       .fetch()
     return { articles }
+  },
+  data() {
+    return {
+      page: 0,
+    }
   },
   methods: {
     enablePrevPagination() {
@@ -77,7 +77,7 @@ export default {
         .limit(5)
         .skip(this.page * 5 + 5)
         .fetch()
-    }
-  }
+    },
+  },
 }
 </script>

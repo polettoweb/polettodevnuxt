@@ -9,7 +9,7 @@
         </div>
       </div>
       <div class="block lg:hidden">
-        <button @click="toggle" class="toggle-container">
+        <button class="toggle-container" @click="toggle">
           <svg
             class="current-color h-6 w-6 toggle"
             viewBox="0 0 20 20"
@@ -57,14 +57,14 @@
 export default {
   data() {
     return {
-      isOpen: false
+      isOpen: false,
     }
   },
   methods: {
     toggle() {
       this.isOpen = !this.isOpen
-    }
-  }
+    },
+  },
 }
 </script>
 

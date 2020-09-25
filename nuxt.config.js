@@ -40,7 +40,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/pwa', '@nuxtjs/style-resources', '@nuxt/content'],
+  modules: ['@nuxtjs/pwa', '@nuxt/content'],
   content: {},
   hooks: {
     'content:file:beforeInsert': (document) => {

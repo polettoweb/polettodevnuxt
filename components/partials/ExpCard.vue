@@ -25,22 +25,22 @@ export default {
   props: {
     title: {
       type: String,
-      required: true
+      required: true,
     },
     location: {
       type: String,
       required: false,
-      default: ''
+      default: '',
     },
     date: {
       type: String,
-      required: true
+      required: true,
     },
     text: {
       type: String,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>
 

@@ -49,25 +49,25 @@ export default {
       { charset: 'utf-8' },
       {
         name: 'viewport',
-        content: 'width=device-width, initial-scale=1'
+        content: 'width=device-width, initial-scale=1',
       },
       { name: 'author', content: 'Marco Poletto Web Developer' },
       {
         name: 'description',
         content:
-          'Marco Poletto Frontend Web Developer, Tech enthusiast, Coffee aficionado, Gamer, mentor, tutor, code, workshop'
-      }
-    ]
+          'Marco Poletto Frontend Web Developer, Tech enthusiast, Coffee aficionado, Gamer, mentor, tutor, code, workshop',
+      },
+    ],
   },
   components: {
     codepen: () => import('../components/partials/codepen'),
     codesandbox: () => import('../components/partials/codesandbox'),
-    github: () => import('../components/partials/github')
+    github: () => import('../components/partials/github'),
   },
   data() {
     return {
-      codeData
+      codeData,
     }
-  }
+  },
 }
 </script>

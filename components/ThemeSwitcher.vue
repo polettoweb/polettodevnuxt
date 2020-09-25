@@ -1,8 +1,8 @@
 <template>
   <a
-    @click.prevent="toggleTheme"
     href="#"
     class="text-copy-primary hover:text-gray-600"
+    @click.prevent="toggleTheme"
   >
     <svg
       v-if="theme === 'theme-light'"
@@ -43,8 +43,8 @@ export default {
   props: {
     theme: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   methods: {
     toggleTheme() {
@@ -52,7 +52,7 @@ export default {
         this.theme === 'theme-light' ? 'theme-dark' : 'theme-light'
       localStorage.setItem('theme', newTheme)
       this.$emit('themeChanged', newTheme)
-    }
-  }
+    },
+  },
 }
 </script>
