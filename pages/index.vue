@@ -9,7 +9,7 @@
         <h1>
           <span class="leading-tight">Hi, I'm Marco,</span>
           <br />
-          <span class="text-blue-700 leading-tight typer-wrapper">
+          <span class="text-copy-secondary leading-tight typer-wrapper">
             <client-only placeholder="Frontend Developer">
               <Vue-typer
                 :text="role"
@@ -47,17 +47,20 @@
       <div class="text-lg sm:text-xl mt-8 w-full pt-24">
         <div class="flex flex-col md:flex-row justify-between items-center">
           <div class="flex-1 text-lg sm:text-xl ml-6 main-text">
-            I am a passionate frontend developer and mentor based in Amsterdam.
-            I am originally from Venice and I love to work with
-            <span>JavaScript</span>, CSS and everything around user interfaces.
-            I am using daily <span>VueJS</span>, <span>GraphQL</span> and
-            <span>Sass</span> for a consultancy in the center of Amsterdam. My
-            goal is to build clean, performant and accessible user interfaces
-            where the right user experience is a focal point. Helping trainee
-            and Junior developers to grow and learn is a major part of my job
-            and my <span>personal mission</span>. My job is also my passion and,
-            therefore, seeking out new technologies and stay up-to-date on
-            industry trends and advancements is more a pleasure than a duty.
+            <p class="font-serif">
+              I am a passionate frontend developer and mentor based in
+              Amsterdam. I am originally from Venice and I love to work with
+              <span>JavaScript</span>, CSS and everything around user
+              interfaces. I am using daily <span>VueJS</span>,
+              <span>GraphQL</span> and <span>Sass</span> for a consultancy in
+              the center of Amsterdam. My goal is to build clean, performant and
+              accessible user interfaces where the right user experience is a
+              focal point. Helping trainee and Junior developers to grow and
+              learn is a major part of my job and my
+              <span>personal mission</span>. My job is also my passion and,
+              therefore, seeking out new technologies and stay up-to-date on
+              industry trends and advancements is more a pleasure than a duty.
+            </p>
           </div>
         </div>
       </div>
@@ -77,7 +80,7 @@
         <h2 class="text-3xl font-bold">
           <nuxt-link
             :to="article.path"
-            class="text-copy-primary hover:text-blue-700"
+            class="text-copy-primary hover:text-copy-secondary"
             >{{ article.title }}</nuxt-link
           >
         </h2>

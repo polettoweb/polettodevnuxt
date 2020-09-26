@@ -10,7 +10,7 @@
         <span
           v-for="tag in article.tags"
           :key="tag"
-          class="bg-gray-300 text-blue-700 font-bold rounded-full px-4 py-2 mr-4 hover:bg-green-300"
+          class="bg-gray-300 text-copy-secondary font-bold rounded-full px-4 py-2 mr-4 hover:bg-green-300"
         >
           {{ tag }}
         </span>

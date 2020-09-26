@@ -2,58 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-.theme-light {
-  --bg-background-primary: #ffffff;
-  --bg-background-secondary: #f7fafc;
-  --bg-background-tertiary: #e2e8f0;
-  --bg-background-gradient-start: #e2e8f0;
-  --bg-background-form: #ffffff;
+:root {
+  --bg-background-primary: rgb(9, 10, 11);
+  --bg-background-secondary: rgb(25, 27, 31);
 
-  --text-highlight: #9f7aea;
-  --text-copy-primary: #2d3748;
-  --text-copy-secondary: #4a5568;
-
-  --border-border-color-primary: #ffffff;
+  --text-copy-primary: rgba(255, 255, 255, 0.85);
+  --text-copy-secondary: rgb(146, 163, 171);
+  --text-copy-hover: rgb(62, 176, 239);
 }
 
-.theme-light .search-highlighted {
-  background: #f0fff4;
-}
-
-.theme-light .search-hover:hover {
-  background: #f0fff4;
-}
-
-.theme-dark .markdown-body {
+.markdown-body {
   color: #24292e;
 }
 
-.theme-dark .search-highlighted {
+.search-highlighted {
   background: #2d3748;
 }
 
-.theme-dark .search-hover:hover {
+.search-hover:hover {
   background: #2d3748;
 }
 
-.theme-dark {
-  --bg-background-primary: #0d2438;
-  --bg-background-secondary: #102c44;
-  --bg-background-tertiary: #1e3951;
-  --bg-background-gradient-start: #2c5282;
-
-  --bg-background-form: #1a202c;
-  --text-highlight: #9f7aea;
-  --text-copy-primary: #cbd5e0;
-  --text-copy-secondary: #e2e8f0;
-
-  --border-border-color-primary: #1a202c;
-}
-.theme-dark .pagination.disabled {
+.pagination.disabled {
   color: var(--bg-background-tertiary);
 }
 
-.theme-dark .markdown-body {
+.markdown-body {
   color: #cbd5e0;
 }
 
@@ -62,7 +36,7 @@
 }
 
 a {
-  @apply text-blue-700 font-bold;
+  @apply text-copy-secondary font-bold;
 }
 
 nav .active:not(.home) {
@@ -149,13 +123,11 @@ nav .active--exact.home {
   overflow-x: hidden;
   opacity: 0.6;
 }
-
-.vue-typer .custom.char.typed {
-  @apply leading-tight text-6xl;
+.vue-typer * {
+  @apply text-copy-secondary !important;
 }
-
-.vue-typer .custom.char.selected {
-  @apply text-blue-700 leading-tight text-6xl;
+.vue-typer .custom.char.typed, .vue-typer .custom.char.selected {
+  @apply leading-tight text-6xl;
 }
 
 .typer-wrapper {

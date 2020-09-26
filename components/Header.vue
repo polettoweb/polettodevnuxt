@@ -23,9 +23,6 @@
         :class="isOpen ? 'block' : 'hidden'"
         class="uppercase tracking-wide font-bold w-full block flex-grow lg:flex lg:flex-initial lg:w-auto items-center mt-8 lg:mt-0"
       >
-        <slot name="switcher" />
-        <!-- Added theme switcher as slot to avoid emit event from child-->
-
         <li class="mr-8 mb-6 lg:mb-0">
           <nuxt-link to="/" class="text-copy-primary hover:text-blue-600 home"
             >Home</nuxt-link

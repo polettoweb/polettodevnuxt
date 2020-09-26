@@ -12,7 +12,7 @@
         <h2 class="text-3xl font-bold">
           <nuxt-link
             :to="article.path"
-            class="text-copy-primary hover:text-blue-700"
+            class="text-copy-primary hover:text-copy-secondary"
             >{{ article.title }}</nuxt-link
           >
         </h2>

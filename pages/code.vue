@@ -17,7 +17,7 @@
             :title="code.title"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-copy-primary hover:text-blue-700"
+            class="text-copy-primary hover:text-copy-secondary"
             >{{ code.title }}</a
           >
         </h2>

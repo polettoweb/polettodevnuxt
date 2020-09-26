@@ -8,15 +8,15 @@ module.exports = {
   theme: {
     extend: {
       spacing: {
-        '80': '20rem',
-        '108': '27rem'
+        80: '20rem',
+        108: '27rem',
       },
       borderWidth: {
-        '14': '14px'
-      }
+        14: '14px',
+      },
     },
     container: {
-      padding: '1rem'
+      padding: '1rem',
     },
     colors: {
       background: {
@@ -24,16 +24,16 @@ module.exports = {
         secondary: 'var(--bg-background-secondary)',
         tertiary: 'var(--bg-background-tertiary)',
 
-        form: 'var(--bg-background-form)'
+        form: 'var(--bg-background-form)',
       },
 
       copy: {
         primary: 'var(--text-copy-primary)',
-        secondary: 'var(--text-copy-hover)'
+        secondary: 'var(--text-copy-hover)',
       },
 
       'border-color': {
-        primary: 'var(--border-border-color-primary)'
+        primary: 'var(--border-border-color-primary)',
       },
 
       transparent: 'transparent',
@@ -50,7 +50,7 @@ module.exports = {
         600: '#38a169',
         700: '#2f855a',
         800: '#276749',
-        900: '#22543d'
+        900: '#22543d',
       },
 
       gray: {
@@ -62,7 +62,7 @@ module.exports = {
         600: '#718096',
         700: '#4a5568',
         800: '#2d3748',
-        900: '#1a202c'
+        900: '#1a202c',
       },
 
       blue: {
@@ -75,8 +75,8 @@ module.exports = {
         700: '#2B6CB0',
         800: '#2C5282',
         900: '#2A4365',
-        1000: '#0d2438'
-      }
+        1000: '#0d2438',
+      },
     },
     fontFamily: {
       sans: [
@@ -90,7 +90,7 @@ module.exports = {
         '"Apple Color Emoji"',
         '"Segoe UI Emoji"',
         '"Segoe UI Symbol"',
-        '"Noto Color Emoji"'
+        '"Noto Color Emoji"',
       ],
       serif: ['Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
       mono: [
@@ -99,22 +99,22 @@ module.exports = {
         'Consolas',
         '"Liberation Mono"',
         '"Courier New"',
-        'monospace'
-      ]
-    }
+        'monospace',
+      ],
+    },
   },
   variants: {
     // Some useful comment
   },
   plugins: [
-    function({ addUtilities }) {
+    function ({ addUtilities }) {
       const newUtilities = {
         '.rotate-45': {
           transform: 'rotate(45deg)',
-          width: '300%'
-        }
+          width: '300%',
+        },
       }
       addUtilities(newUtilities)
-    }
-  ]
+    },
+  ],
 }

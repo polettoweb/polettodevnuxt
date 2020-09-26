@@ -6,10 +6,10 @@
         <nuxt-link :to="'/tags/' + article">{{ article }}</nuxt-link>
         <!-- <h2 class="text-3xl font-bold">
           <nuxt-link
-            :to="article.path"
             v-for="tag in article.tags"
             :key="tag"
-            class="text-copy-primary hover:text-blue-700"
+            :to="article.path"
+            class="text-copy-primary hover:text-copy-secondary"
             >{{ tag }}</nuxt-link
           >
         </h2> -->
