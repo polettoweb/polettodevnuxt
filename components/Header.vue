@@ -24,24 +24,30 @@
         class="uppercase tracking-wide font-bold w-full block flex-grow lg:flex lg:flex-initial lg:w-auto items-center mt-8 lg:mt-0"
       >
         <li class="mr-8 mb-6 lg:mb-0">
-          <nuxt-link to="/" class="text-copy-primary hover:text-blue-600 home"
+          <nuxt-link
+            to="/"
+            class="text-copy-primary hover:text-copy-secondary home"
             >Home</nuxt-link
           >
         </li>
         <li class="mr-8 mb-6 lg:mb-0">
           <nuxt-link
             to="/experience"
-            class="text-copy-primary hover:text-blue-600"
+            class="text-copy-primary hover:text-copy-secondary"
             >Experience</nuxt-link
           >
         </li>
         <li class="mr-8 mb-6 lg:mb-0">
-          <nuxt-link to="/code" class="text-copy-primary hover:text-blue-600"
+          <nuxt-link
+            to="/code"
+            class="text-copy-primary hover:text-copy-secondary"
             >Code</nuxt-link
           >
         </li>
         <li>
-          <nuxt-link to="/blog" class="text-copy-primary hover:text-blue-600"
+          <nuxt-link
+            to="/blog"
+            class="text-copy-primary hover:text-copy-secondary"
             >Blog</nuxt-link
           >
         </li>

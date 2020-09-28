@@ -6,7 +6,7 @@
       <div
         class="text-4xl font-bold w-full lg:w-3/5 items-center text-center lg:text-left pb-8"
       >
-        <h1>
+        <h1 class="font-normal">
           <span class="leading-tight">Hi, I'm Marco,</span>
           <br />
           <span class="text-copy-secondary leading-tight typer-wrapper">
@@ -67,7 +67,7 @@
     </div>
     <!-- end hero -->
     <div class="flex flex-row items-center justify-center py-16">
-      <h2 id="projects" class="w-2/5 font-bold text-4xl mb-6 text-center">
+      <h2 id="projects" class="w-2/5 text-4xl mb-6 text-center">
         Latest from blog
       </h2>
     </div>
@@ -77,13 +77,13 @@
         :key="article.id"
         class="post border-gray-400 border-b mb-12 mx-12 w-full"
       >
-        <h2 class="text-3xl font-bold">
+        <h3 class="text-2xl">
           <nuxt-link
             :to="article.path"
             class="text-copy-primary hover:text-copy-secondary"
             >{{ article.title }}</nuxt-link
           >
-        </h2>
+        </h3>
         <div class="text-copy-secondary mb-4">
           <span>{{ formatDate(article.date) }}</span>
           <span>&middot;</span>
@@ -148,9 +148,9 @@ export default {
 }
 </script>
 <style lang="scss">
-.vue-typer .custom.char.typed {
-  color: #2b6cb0;
-}
+// .vue-typer .custom.char.typed {
+//   color: #2b6cb0;
+// }
 .vue-typer .custom.caret {
   display: none;
 }
@@ -166,9 +166,7 @@ export default {
 
 .main-text {
   span {
-    &:hover {
-      color: var(--text-highlight);
-    }
+    color: var(--text-copy-secondary);
   }
 }
 </style>

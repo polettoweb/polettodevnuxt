@@ -1,17 +1,23 @@
 <template>
   <div class="container-inner mx-auto py-16">
+    <h1 class="text-4xl font-bold mb-8 pb-4 border-b border-copy-secondary">
+      Code examples
+    </h1>
     <div
-      v-for="code in codeData"
+      v-for="(code, i) in codeData"
       :key="code.title"
-      class="border-gray-400 border-b mb-12 flex justify-between w-4/5 mx-auto"
+      :class="[
+        'border-gray-400 py-6 flex justify-between w-4/5 mx-auto',
+        { 'bg-background-secondary': i % 2 == 0 },
+      ]"
     >
-      <div class="w-1/5 flex justify-start items-center">
+      <div class="w-1/5 flex justify-center items-center">
         <codepen v-if="code.type === 'codepen'" />
         <codesandbox v-if="code.type === 'codesandbox'" />
         <github v-if="code.type === 'github'" />
       </div>
       <div class="post w-4/5">
-        <h2 class="text-3xl font-bold">
+        <h2 class="text-2xl mb-8">
           <a
             :href="code.link"
             :title="code.title"
@@ -22,7 +28,7 @@
           >
         </h2>
 
-        <div class="text-lg mb-4">{{ code.content }}</div>
+        <div class="text-lg font-serif mb-4">{{ code.content }}</div>
         <div class="mb-8">
           <a
             :href="code.link"

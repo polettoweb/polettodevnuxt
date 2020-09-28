@@ -22,14 +22,13 @@ module.exports = {
       background: {
         primary: 'var(--bg-background-primary)',
         secondary: 'var(--bg-background-secondary)',
-        tertiary: 'var(--bg-background-tertiary)',
-
-        form: 'var(--bg-background-form)',
+        tertiary: 'var(--text-copy-secondary)',
       },
 
       copy: {
         primary: 'var(--text-copy-primary)',
-        secondary: 'var(--text-copy-hover)',
+        secondary: 'var(--text-copy-secondary)',
+        tertiary: 'var(--bg-background-primary)',
       },
 
       'border-color': {
@@ -106,15 +105,5 @@ module.exports = {
   variants: {
     // Some useful comment
   },
-  plugins: [
-    function ({ addUtilities }) {
-      const newUtilities = {
-        '.rotate-45': {
-          transform: 'rotate(45deg)',
-          width: '300%',
-        },
-      }
-      addUtilities(newUtilities)
-    },
-  ],
+  plugins: [],
 }

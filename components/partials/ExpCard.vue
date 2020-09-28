@@ -1,18 +1,18 @@
 <template>
   <li class="expcard" data-cy="expcard">
     <svg
-      class="ion-ios-circle-filled text-copy-primary"
+      class="ion-ios-circle-filled"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
     >
-      <circle cx="12" cy="12" r="12" fill="#3182CE" />
+      <circle cx="12" cy="12" r="12" fill="rgb(62, 176, 239)" />
     </svg>
-    <div class="expcard__title bg-blue-600">
-      <p>{{ title }}</p>
+    <div class="expcard__title bg-background-secondary">
+      <p class="text-copy-secondary">{{ title }}</p>
     </div>
     <div class="expcard__text">
-      <p class="expcard__location">{{ location }}</p>
+      <p class="expcard__location text-copy-secondary">{{ location }}</p>
       <p class="expcard__date">{{ date }}</p>
       <p class="expcard__copy">{{ text }}</p>
     </div>
@@ -44,4 +44,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.expcard__title {
+  border: 2px solid var(--text-copy-secondary);
+}
+</style>

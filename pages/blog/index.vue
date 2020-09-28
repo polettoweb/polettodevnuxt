@@ -1,13 +1,15 @@
 <template>
   <div class="container-inner mx-auto my-16">
-    <h2 class="text-4xl font-bold mb-8 border-b">Articles</h2>
-    <div class="container-inner mx-auto py-16">
+    <h1 class="text-4xl font-bold mb-8 pb-4 border-b border-copy-secondary">
+      Blog
+    </h1>
+    <div class="container-inner mx-auto py-16 w-4/5">
       <div
         v-for="article in articles.slice(page * 5, page * 5 + 4)"
         :key="article.id"
-        class="post border-gray-400 border-b mb-12"
+        class="post border-gray-400 mb-12"
       >
-        <h2 class="text-3xl font-bold">
+        <h2 class="text-2xl font-bold">
           <nuxt-link
             :to="article.path"
             class="text-copy-primary hover:text-copy-secondary"

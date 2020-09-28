@@ -68,8 +68,9 @@ export default {
     position: absolute;
     width: 2px;
     height: 90%;
-    background-color: var(--bg-background-tertiary);
+    background-color: var(--text-copy-secondary);
     left: 50%;
+
     @media (max-width: 767px) {
       left: 96%;
     }
@@ -108,7 +109,7 @@ export default {
             font-size: 30px;
             width: 0;
             height: 0;
-            border-top: 16px solid #3182ce;
+            border-top: 16px solid var(--text-copy-secondary);
             border-right: 16px solid transparent;
             right: -16px;
             top: 0;
@@ -133,7 +134,7 @@ export default {
             content: '';
             width: 0;
             height: 0;
-            border-top: 16px solid #3182ce;
+            border-top: 16px solid var(--text-copy-secondary);
             border-left: 16px solid transparent;
             left: -16px;
             top: 0;
