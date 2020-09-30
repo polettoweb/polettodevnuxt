@@ -7,8 +7,11 @@
   >
     <Header>
       <template v-slot:logo>
-        <nuxt-link to="/">
+        <nuxt-link v-if="theme === 'dark-theme'" to="/">
           <img src="@/assets/images/logo.svg" class="w-40" alt="logo" />
+        </nuxt-link>
+        <nuxt-link v-else to="/">
+          <img src="@/assets/images/logo_light_mode.svg" class="w-40" alt="logo" />
         </nuxt-link>
       </template>
       <template v-slot:switcher>

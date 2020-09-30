@@ -1,31 +1,21 @@
 <template>
   <div class="container-inner mx-auto my-16">
-    <h1 class="text-4xl font-bold mb-8 pb-4 border-b border-copy-secondary">
-      Blog
-    </h1>
-    <div class="container-inner mx-auto py-16 w-4/5">
-      <div
-        v-for="article in articles.slice(page * 5, page * 5 + 4)"
-        :key="article.id"
-        class="post border-gray-400 mb-12"
-      >
-        <h2 class="text-2xl font-bold">
-          <nuxt-link
-            :to="article.path"
-            class="text-copy-primary hover:text-copy-secondary"
-            >{{ article.title }}</nuxt-link
-          >
+    <h1 class="text-4xl font-bold mb-8 pb-4 border-b border-copy-secondary">Blog</h1>
+    <div class="container-inner mx-auto py-16">
+      <div v-for="article in articles.slice(page * 5, page * 5 + 4)" :key="article.id" class="mb-12">
+        <h2 class="text-2xl">
+          <nuxt-link :to="article.path" class="text-copy-primary hover:text-copy-secondary">
+            {{ article.title }}
+          </nuxt-link>
         </h2>
-        <div class="text-copy-secondary mb-4">
+        <div class="text-copy-secondary mb-4 uppercase text-md">
           <span>{{ formatDate(article.date) }}</span>
           <span>&middot;</span>
           <span>{{ formatTime(article.readingTime) }} min read</span>
         </div>
-        <div class="text-lg mb-4">{{ article.summary }}</div>
-        <div class="mb-8">
-          <nuxt-link :to="article.path" class="font-bold uppercase"
-            >Read More</nuxt-link
-          >
+        <div class="text-sm my-2">{{ article.summary }}</div>
+        <div class="text-copy-secondary mb-4 text-md">
+          <nuxt-link :to="article.path" class="font-bold uppercase">Read More</nuxt-link>
         </div>
       </div>
       <!-- end article -->
@@ -47,9 +37,7 @@ export default {
   },
 
   async asyncData({ $content, route }) {
-    const articles = await $content('blog', { deep: true })
-      .sortBy('date', 'desc')
-      .fetch()
+    const articles = await $content('blog', { deep: true }).sortBy('date', 'desc').fetch()
     return { articles }
   },
   data() {

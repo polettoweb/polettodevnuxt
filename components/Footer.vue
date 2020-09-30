@@ -1,7 +1,7 @@
 <template>
-  <footer class="text-white">
+  <footer class="text-white bg-copy-secondary m-0 p-0">
     <svg
-      class="editorial"
+      class="lg:block absolute z-0 w-full m-0 h-24 hidden"
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
       viewBox="0 24 150 28 "
@@ -32,7 +32,7 @@
       </g>
     </svg>
     <div
-      class="container mx-auto flex flex-col lg:flex-row items-center justify-between py-8 svg-top"
+      class="container mx-auto flex flex-col lg:flex-row items-center justify-between py-8 relative z-10"
     >
       <div class="mb-8 lg:mb-0">
         <div>Copyright 2019. All rights reserved.</div>
@@ -183,33 +183,7 @@
   </footer>
 </template>
 
-<script>
-export default {}
-</script>
 <style scoped>
-footer {
-  margin: 0;
-  padding: 0;
-  background-color: #03396c;
-}
-.svg-top {
-  position: relative;
-  z-index: 1;
-}
-.editorial {
-  display: block;
-  position: absolute;
-  z-index: 0;
-  width: 100%;
-  height: 100px;
-  margin: 0;
-}
-@media (max-width: 1023px) {
-  .editorial {
-    display: none;
-  }
-}
-
 .parallax1 > use {
   animation: move-forever1 10s linear infinite;
 }

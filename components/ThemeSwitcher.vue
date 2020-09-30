@@ -1,11 +1,7 @@
 <template>
-  <a
-    href="#"
-    class="text-copy-primary hover:text-gray-600"
-    @click.prevent="toggleTheme"
-  >
+  <a href="#" class="text-copy-primary hover:text-gray-600" @click.prevent="toggleTheme">
     <svg
-      v-if="theme === 'light-theme'"
+      v-if="theme === 'light-theme' || theme === 'null'"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -49,7 +45,7 @@ export default {
   methods: {
     toggleTheme() {
       this.$colorMode.preference =
-        this.$colorMode.value === 'light-theme' ? 'dark-theme' : 'light-theme'
+        this.$colorMode.value === 'light-theme' || this.$colorMode.value === 'null' ? 'dark-theme' : 'light-theme'
     },
   },
 }

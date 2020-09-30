@@ -3,23 +3,24 @@
 @tailwind utilities;
 
 :root {
+  --text-copy-secondary:  rgb(62, 176, 239);
+}
+
+.dark-theme {
   --bg-background-primary: rgb(9, 10, 11);
   --bg-background-secondary: rgb(25, 27, 31);
-
   --text-copy-primary: rgba(255, 255, 255, 0.85);
-  --text-copy-secondary:  rgb(62, 176, 239);
 }
 
 .light-theme {
-  --bg-background-primary: #ffffff;
-  --bg-background-secondary: #f7fafc;
-
-  --text-copy-primary: #2d3748;
-  --text-copy-secondary:  rgb(62, 176, 239);
+  --bg-background-primary: white;
+  --bg-background-secondary: rgb(247,250,252);
+  --text-copy-primary: rgb(45,55,72);
+  
 }
 
 h1, h2 {
-  font-weight: 400;
+  @apply font-normal;
 }
 
 a {
@@ -174,4 +175,8 @@ nav .active--exact.home {
 
 .markdown-body hr {
   margin: 50px 0;
+}
+
+.markdown-body img {
+  margin: 0 auto;
 }

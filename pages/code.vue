@@ -1,15 +1,10 @@
 <template>
   <div class="container-inner mx-auto py-16">
-    <h1 class="text-4xl font-bold mb-8 pb-4 border-b border-copy-secondary">
-      Code examples
-    </h1>
+    <h1 class="text-4xl font-bold mb-8 pb-4 border-b border-copy-secondary">Code examples</h1>
     <div
       v-for="(code, i) in codeData"
       :key="code.title"
-      :class="[
-        'border-gray-400 py-6 flex justify-between w-4/5 mx-auto',
-        { 'bg-background-secondary': i % 2 == 0 },
-      ]"
+      :class="['border-gray-400 py-6 flex justify-between mx-auto', { 'bg-background-secondary': i % 2 == 0 }]"
     >
       <div class="w-1/5 flex justify-center items-center">
         <codepen v-if="code.type === 'codepen'" />
@@ -17,26 +12,26 @@
         <github v-if="code.type === 'github'" />
       </div>
       <div class="post w-4/5">
-        <h2 class="text-2xl mb-8">
-          <a
-            :href="code.link"
+        <h3 class="text-2xl">
+          <nuxt-link
+            :to="code.link"
             :title="code.title"
             target="_blank"
             rel="noopener noreferrer"
             class="text-copy-primary hover:text-copy-secondary"
-            >{{ code.title }}</a
+            >{{ code.title }}</nuxt-link
           >
-        </h2>
+        </h3>
 
-        <div class="text-lg font-serif mb-4">{{ code.content }}</div>
-        <div class="mb-8">
-          <a
-            :href="code.link"
+        <div class="text-sm italic font-serif my-2">{{ code.content }}</div>
+        <div class="text-copy-secondary mb-4 text-md">
+          <nuxt-link
+            :to="code.link"
             :title="code.link"
             target="_blank"
             rel="noopener noreferrer"
             class="font-bold uppercase"
-            >View Code</a
+            >View Code</nuxt-link
           >
         </div>
       </div>

@@ -1,20 +1,14 @@
 <template>
-  <section class="resume__container container-inner mx-auto">
-    <div class="experience__container flex flex-col">
-      <h1>Experience</h1>
-      <p
-        class="experience__intro text-copy-primary"
-        data-cy="experience__intro"
-      >
-        Web development has been a passion of mine since 1997 that became my
-        full-time job five years ago. I really enjoy the challenge that the web
-        brings to developers and I like to keep improving and learn new
-        technologies. I choose to specialise myself into front-end for being
-        able to shape user interfaces based on the client needs and for being
-        challenged by the constant amount of innovations that the front-end
-        world is giving
+  <section class="container-inner mx-auto py-16">
+    <h1 class="text-4xl font-bold mb-8 pb-4 border-b border-copy-secondary">Experience</h1>
+    <div class="experience__container flex flex-col py-0 px-5">
+      <p class="experience__intro text-copy-primary" data-cy="experience__intro">
+        Web development has been a passion of mine since 1997 that became my full-time job five years ago. I really
+        enjoy the challenge that the web brings to developers and I like to keep improving and learn new technologies. I
+        choose to specialise myself into front-end for being able to shape user interfaces based on the client needs and
+        for being challenged by the constant amount of innovations that the front-end world is giving
       </p>
-      <ul class="experience">
+      <ul class="experience w-full my-8 mx-auto pb-24 relative">
         <ExpCard
           v-for="item in resumeData"
           :key="item.title"
@@ -22,6 +16,7 @@
           :title="item.title"
           :date="item.date"
           :text="item.text"
+          :techs="item.tech.split(',')"
         />
       </ul>
     </div>
@@ -60,13 +55,10 @@ export default {
 </script>
 <style lang="scss">
 .experience {
-  padding-bottom: 100px;
-  position: relative;
-
   &:before {
     content: '';
     position: absolute;
-    width: 2px;
+    width: 3px;
     height: 90%;
     background-color: var(--text-copy-secondary);
     left: 50%;
@@ -77,22 +69,9 @@ export default {
   }
 
   &__container {
-    padding: 0 20px;
-
-    h3 {
-      padding: 0;
-    }
-
     ul {
-      width: 100%;
-      margin: 32px auto;
-
       .expcard {
-        clear: both;
         width: calc(50% - 30px);
-        height: auto;
-        position: relative;
-        background-color: var(--bg-background-secondary);
         transition: all 0.5s cubic-bezier(0.17, 0.67, 0.5, 1);
 
         @media (max-width: 767px) {
@@ -159,39 +138,9 @@ export default {
           margin-top: -60px;
         }
 
-        &__title {
-          padding: 20px;
-
-          p {
-            font-weight: 700;
-            line-height: 30px;
-            font-size: 19px;
-          }
-        }
-
-        &__text {
-          width: 100%;
-          height: auto;
-          padding: 20px;
-
-          p {
-            padding: 0 20px;
-
-            &.expcard__location {
-              padding-bottom: 10px;
-            }
-
-            &.expcard__date {
-              padding-bottom: 10px;
-              font-weight: bold;
-            }
-          }
-        }
-
         .ion-ios-circle-filled {
-          font-size: 30px;
           position: absolute;
-          top: -15px;
+          top: -10px;
           right: 0;
         }
       }

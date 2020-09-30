@@ -1,11 +1,7 @@
 <template>
   <div>
-    <div
-      class="hero container-inner mx-auto flex flex-col lg:flex-row flex-wrap justify-between pt-16 pb-24"
-    >
-      <div
-        class="text-4xl font-bold w-full lg:w-3/5 items-center text-center lg:text-left pb-8"
-      >
+    <div class="hero container-inner mx-auto flex flex-col lg:flex-row flex-wrap justify-between pt-16 pb-24">
+      <div class="text-4xl font-bold w-full lg:w-3/5 items-center text-center lg:text-left pb-8">
         <h1 class="font-normal">
           <span class="leading-tight">Hi, I'm Marco,</span>
           <br />
@@ -25,9 +21,11 @@
         </h1>
       </div>
       <img
+        v-if="$colorMode === 'dark-theme'"
         class="lg:w-2/5 hidden lg:inline-block relative z-10"
         src="@/assets/images/marco-exa.png"
       />
+      <img v-else class="lg:w-2/5 hidden lg:inline-block relative z-10" src="@/assets/images/marco-exa-light.png" />
       <svg
         class="absolute rotate-45 bg-octa"
         width="448"
@@ -47,19 +45,15 @@
       <div class="text-lg sm:text-xl mt-8 w-full pt-24">
         <div class="flex flex-col md:flex-row justify-between items-center">
           <div class="flex-1 text-lg sm:text-xl ml-6 main-text">
-            <p class="font-serif">
-              I am a passionate frontend developer and mentor based in
-              Amsterdam. I am originally from Venice and I love to work with
-              <span>JavaScript</span>, CSS and everything around user
-              interfaces. I am using daily <span>VueJS</span>,
-              <span>GraphQL</span> and <span>Sass</span> for a consultancy in
-              the center of Amsterdam. My goal is to build clean, performant and
-              accessible user interfaces where the right user experience is a
-              focal point. Helping trainee and Junior developers to grow and
-              learn is a major part of my job and my
-              <span>personal mission</span>. My job is also my passion and,
-              therefore, seeking out new technologies and stay up-to-date on
-              industry trends and advancements is more a pleasure than a duty.
+            <p class="">
+              I am a passionate frontend developer and mentor based in Amsterdam. I am originally from Venice and I love
+              to work with
+              <span>JavaScript</span>, CSS and everything around user interfaces. I am using daily <span>VueJS</span>,
+              <span>GraphQL</span> and <span>Sass</span> for a consultancy in the center of Amsterdam. My goal is to
+              build clean, performant and accessible user interfaces where the right user experience is a focal point.
+              Helping trainee and Junior developers to grow and learn is a major part of my job and my
+              <span>personal mission</span>. My job is also my passion and, therefore, seeking out new technologies and
+              stay up-to-date on industry trends and advancements is more a pleasure than a duty.
             </p>
           </div>
         </div>
@@ -67,25 +61,17 @@
     </div>
     <!-- end hero -->
     <div class="flex flex-row items-center justify-center py-16">
-      <h2 id="projects" class="w-2/5 text-4xl mb-6 text-center">
-        Latest from blog
-      </h2>
+      <h2 id="projects" class="text-4xl mb-6 text-center">Latest from blog</h2>
     </div>
     <div class="container-inner mx-auto flex flex-row flex-wrap justify-left">
-      <div
-        v-for="article in articles"
-        :key="article.id"
-        class="post border-gray-400 border-b mb-12 mx-12 w-full"
-      >
+      <div v-for="article in articles" :key="article.id" class="post border-gray-400 border-b mb-12 mx-12 w-full">
         <h3 class="text-2xl">
-          <nuxt-link
-            :to="article.path"
-            class="text-copy-primary hover:text-copy-secondary"
-            >{{ article.title }}</nuxt-link
-          >
+          <nuxt-link :to="article.path" class="text-copy-primary hover:text-copy-secondary">{{
+            article.title
+          }}</nuxt-link>
         </h3>
         <div>
-          <p class="text-sm italic font-serif my-2">{{ article.summary }}</p>
+          <p class="text-sm my-2">{{ article.summary }}</p>
         </div>
         <div class="text-copy-secondary mb-4 uppercase text-md">
           <span>{{ formatDate(article.date) }}</span>
@@ -116,13 +102,10 @@ export default {
     ],
   },
   components: {
-    VueTyper: () => import('vue-typer').then((m) => m.VueTyper),
+    VueTyper: () => import('vue-typer').then(m => m.VueTyper),
   },
   async asyncData({ $content, route }) {
-    const articles = await $content('blog', { deep: true })
-      .sortBy('date', 'desc')
-      .limit(3)
-      .fetch()
+    const articles = await $content('blog', { deep: true }).sortBy('date', 'desc').limit(3).fetch()
     return { articles }
   },
   data() {

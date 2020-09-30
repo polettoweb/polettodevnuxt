@@ -1,20 +1,10 @@
 <template>
   <div class="container-inner mx-auto my-16">
-    <h2 class="text-4xl font-bold mb-8 border-b">Articles</h2>
+    <h2 class="text-4xl font-bold mb-8 border-b">Tags</h2>
     <div class="container-inner mx-auto py-16">
-      <div v-for="(article, i) in filteredTags" :key="i">
-        <nuxt-link :to="'/tags/' + article">{{ article }}</nuxt-link>
-        <!-- <h2 class="text-3xl font-bold">
-          <nuxt-link
-            v-for="tag in article.tags"
-            :key="tag"
-            :to="article.path"
-            class="text-copy-primary hover:text-copy-secondary"
-            >{{ tag }}</nuxt-link
-          >
-        </h2> -->
+      <div v-for="(tag, i) in filteredTags" :key="i">
+        <nuxt-link :to="'/tags/' + tag">{{ tag }}</nuxt-link>
       </div>
-      <!-- end article -->
     </div>
   </div>
 </template>
@@ -33,7 +23,7 @@ export default {
   computed: {
     filteredTags() {
       let filtered = []
-      this.articles.map((item) => {
+      this.articles.map(item => {
         filtered.push(...item.tags)
       })
       filtered = this.removeDuplicates(filtered)
