@@ -48,10 +48,8 @@ export default {
   },
   methods: {
     toggleTheme() {
-      const newTheme =
-        this.theme === 'light-theme' ? 'dark-theme' : 'light-theme'
-      localStorage.setItem('theme', newTheme)
-      this.$emit('themeChanged', newTheme)
+      this.$colorMode.preference =
+        this.$colorMode.value === 'light-theme' ? 'dark-theme' : 'light-theme'
     },
   },
 }

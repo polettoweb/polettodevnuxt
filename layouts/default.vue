@@ -13,7 +13,7 @@
       </template>
       <template v-slot:switcher>
         <li class="mr-8 mb-6 lg:mb-0">
-          <theme-switcher :theme="theme" @themeChanged="updateTheme" />
+          <theme-switcher :theme="theme" />
         </li>
       </template>
     </Header>
@@ -35,17 +35,9 @@ export default {
     Footer,
     ThemeSwitcher,
   },
-  data() {
-    return {
-      theme: '',
-    }
-  },
-  beforeMount() {
-    this.theme = localStorage.getItem('theme') || 'dark-theme'
-  },
-  methods: {
-    updateTheme(theme) {
-      this.theme = theme
+  computed: {
+    theme() {
+      return this.$colorMode.value
     },
   },
 }
