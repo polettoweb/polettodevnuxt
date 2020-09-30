@@ -35,14 +35,17 @@ export default {
     Footer,
     ThemeSwitcher,
   },
-  computed: {
-    theme() {
-      return this.$store.state.theme
-    },
+  data() {
+    return {
+      theme: '',
+    }
+  },
+  beforeMount() {
+    this.theme = localStorage.getItem('theme') || 'dark-theme'
   },
   methods: {
     updateTheme(theme) {
-      this.$store.commit('updateTheme', theme)
+      this.theme = theme
     },
   },
 }
