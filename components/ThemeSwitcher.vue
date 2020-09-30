@@ -5,7 +5,7 @@
     @click.prevent="toggleTheme"
   >
     <svg
-      v-if="theme === 'theme-light'"
+      v-if="theme === 'light-theme'"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -49,7 +49,7 @@ export default {
   methods: {
     toggleTheme() {
       const newTheme =
-        this.theme === 'theme-light' ? 'theme-dark' : 'theme-light'
+        this.theme === 'light-theme' ? 'dark-theme' : 'light-theme'
       localStorage.setItem('theme', newTheme)
       this.$emit('themeChanged', newTheme)
     },

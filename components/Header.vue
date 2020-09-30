@@ -23,6 +23,7 @@
         :class="isOpen ? 'block' : 'hidden'"
         class="uppercase tracking-wide font-bold w-full block flex-grow lg:flex lg:flex-initial lg:w-auto items-center mt-8 lg:mt-0"
       >
+        <slot name="switcher" />
         <li class="mr-8 mb-6 lg:mb-0">
           <nuxt-link
             to="/"

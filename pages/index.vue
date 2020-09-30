@@ -25,7 +25,7 @@
         </h1>
       </div>
       <img
-        class="lg:w-2/5 hidden lg:inline-block personal-photo"
+        class="lg:w-2/5 hidden lg:inline-block relative z-10"
         src="@/assets/images/marco-exa.png"
       />
       <svg
@@ -84,7 +84,10 @@
             >{{ article.title }}</nuxt-link
           >
         </h3>
-        <div class="text-copy-secondary mb-4">
+        <div>
+          <p class="text-sm italic font-serif my-2">{{ article.summary }}</p>
+        </div>
+        <div class="text-copy-secondary mb-4 uppercase text-md">
           <span>{{ formatDate(article.date) }}</span>
           <span>&middot;</span>
           <span>{{ formatTime(article.readingTime) }} min read</span>
@@ -139,7 +142,7 @@ export default {
   methods: {
     formatDate(date) {
       const options = { year: 'numeric', month: 'long', day: 'numeric' }
-      return new Date(date).toLocaleDateString('gb', options)
+      return new Date(date).toLocaleDateString('en-GB', options)
     },
     formatTime(time) {
       return Math.ceil(time / 60000)
@@ -148,22 +151,6 @@ export default {
 }
 </script>
 <style lang="scss">
-// .vue-typer .custom.char.typed {
-//   color: #2b6cb0;
-// }
-.vue-typer .custom.caret {
-  display: none;
-}
-
-.vue-typer .custom.char.selected {
-  background-color: transparent;
-  text-decoration: line-through;
-}
-.personal-photo {
-  position: relative;
-  z-index: 1;
-}
-
 .main-text {
   span {
     color: var(--text-copy-secondary);

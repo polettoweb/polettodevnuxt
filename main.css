@@ -10,6 +10,14 @@
   --text-copy-secondary:  rgb(62, 176, 239);
 }
 
+.light-theme {
+  --bg-background-primary: #ffffff;
+  --bg-background-secondary: #f7fafc;
+
+  --text-copy-primary: #2d3748;
+  --text-copy-secondary:  rgb(62, 176, 239);
+}
+
 h1, h2 {
   font-weight: 400;
 }
