@@ -45,6 +45,7 @@
           <a
             href="https://www.linkedin.com/in/marco-poletto-96853774/"
             target="_blank"
+            rel="noopener noreferrer"
             class="block text-white hover:text-gray-400"
             title="Linkedin page"
           >
@@ -61,6 +62,7 @@
           <a
             href="https://dev.to/polettoweb"
             target="_blank"
+            rel="noopener noreferrer"
             class="block text-white hover:text-gray-400"
             title="Dev.to page"
           >
@@ -77,6 +79,7 @@
           <a
             href="https://codepen.io/polettoweb/"
             target="_blank"
+            rel="noopener noreferrer"
             class="block text-white hover:text-gray-400"
             title="Codepen page"
           >
@@ -93,6 +96,7 @@
           <a
             href="https://youtube.com/channel/UC_ap7AXgonikRgAYqRhbibg"
             target="_blank"
+            rel="noopener noreferrer"
             class="block text-white hover:text-gray-400"
             title="YouTube channel"
           >
@@ -109,6 +113,7 @@
           <a
             href="https://github.com/polettoweb"
             target="_blank"
+            rel="noopener noreferrer"
             class="block text-white hover:text-gray-400"
             title="GitHub page"
           >
@@ -125,6 +130,7 @@
           <a
             href="https://twitter.com/polettoweb"
             target="_blank"
+            rel="noopener noreferrer"
             class="block text-white hover:text-gray-400"
             title="Twitter page"
           >

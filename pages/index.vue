@@ -22,10 +22,16 @@
       </div>
       <img
         v-if="$colorMode.value === 'dark-theme'"
+        alt="Marco's fab portrait"
         class="lg:w-2/5 hidden lg:inline-block relative z-10"
         src="@/assets/images/marco-exa.png"
       />
-      <img v-else class="lg:w-2/5 hidden lg:inline-block relative z-10" src="@/assets/images/marco-exa-light.png" />
+      <img
+        v-else
+        alt="Marco's fab portrait"
+        class="lg:w-2/5 hidden lg:inline-block relative z-10"
+        src="@/assets/images/marco-exa-light.png"
+      />
       <svg
         class="absolute rotate-45 bg-octa"
         width="448"
