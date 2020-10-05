@@ -13,26 +13,22 @@
       </div>
       <div class="post w-4/5">
         <h3 class="text-2xl">
-          <nuxt-link
+          <a
             :to="code.link"
             :title="code.title"
             target="_blank"
             rel="noopener noreferrer"
             class="text-copy-primary hover:text-copy-secondary"
-            >{{ code.title }}</nuxt-link
           >
+            {{ code.title }}
+          </a>
         </h3>
 
         <div class="text-sm italic font-serif my-2">{{ code.content }}</div>
         <div class="text-copy-secondary mb-4 text-md">
-          <nuxt-link
-            :to="code.link"
-            :title="code.link"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="font-bold uppercase"
-            >View Code</nuxt-link
-          >
+          <a :to="code.link" :title="code.link" target="_blank" rel="noopener noreferrer" class="font-bold uppercase">
+            View Code
+          </a>
         </div>
       </div>
     </div>
