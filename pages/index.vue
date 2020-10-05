@@ -24,13 +24,13 @@
         v-if="$colorMode.value === 'dark-theme'"
         alt="Marco's fab portrait"
         class="lg:w-2/5 hidden lg:inline-block relative z-10"
-        src="@/assets/images/marco-exa.png"
+        src="@/assets/images/marco.png"
       />
       <img
         v-else
         alt="Marco's fab portrait"
         class="lg:w-2/5 hidden lg:inline-block relative z-10"
-        src="@/assets/images/marco-exa-light.png"
+        src="@/assets/images/marco.png"
       />
       <svg
         class="absolute rotate-45 bg-octa"
