@@ -18,8 +18,8 @@ export default {
   props: {
     socials: {
       type: Array,
-      required: false
-    }
-  }
+      required: false,
+    },
+  },
 }
 </script>

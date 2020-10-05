@@ -2,12 +2,7 @@
   <div class="keywords__container" data-cy="keywords__container">
     <div class="keywords__wrapper">
       <div>
-        <p
-          v-for="(item, i) in words"
-          :key="i"
-          :id="item.toLowerCase()"
-          class="keywords__text"
-        >
+        <p v-for="(item, i) in words" :id="item.toLowerCase()" :key="i" class="keywords__text">
           {{ item }}
         </p>
       </div>
@@ -22,8 +17,8 @@ export default {
     words: {
       type: Array,
       required: true,
-      validator: (prop) => prop.length > 0
-    }
-  }
+      validator: prop => prop.length > 0,
+    },
+  },
 }
 </script>

@@ -4,14 +4,14 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Marco Poletto | Web Developer | Mentor',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || '',
+        content: 'Marco Poletto Frontend Web Developer, Tech enthusiast, Coffee aficionado, Gamer, mentor, tutor',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
@@ -27,7 +27,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  // plugins: ['~plugins/vue-js-toggle-button'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -44,7 +44,7 @@ export default {
   modules: ['@nuxtjs/pwa', '@nuxt/content'],
   content: {},
   hooks: {
-    'content:file:beforeInsert': (document) => {
+    'content:file:beforeInsert': document => {
       if (document.extension === '.md') {
         const { time } = require('reading-time')(document.text)
 
@@ -57,7 +57,7 @@ export default {
       const { $content } = require('@nuxt/content')
       const files = await $content({ deep: true }).only(['path']).fetch()
 
-      return files.map((file) => (file.path === '/index' ? '/' : file.path))
+      return files.map(file => (file.path === '/index' ? '/' : file.path))
     },
   },
   /*

@@ -1,8 +1,6 @@
 <template>
   <div>
-    <div
-      class="container-inner mx-auto flex flex-row justify-center items-center flex-wrap"
-    >
+    <div class="container-inner mx-auto flex flex-row justify-center items-center flex-wrap">
       <div
         v-for="item in projectData"
         :key="item.id"
@@ -10,9 +8,7 @@
         data-cy="portfolio__img"
         @click="openModal"
       >
-        <div
-          class="border border-white flex flex-col justify-center items-center h-full relative"
-        >
+        <div class="border border-white flex flex-col justify-center items-center h-full relative">
           <img :src="`/${item.src}`" :alt="item.alt" class="mx-auto" />
         </div>
       </div>

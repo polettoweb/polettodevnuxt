@@ -1,11 +1,5 @@
 <template>
-  <svg
-    width="120"
-    height="120"
-    viewBox="0 0 120 120"
-    class="codesandbox-svg"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+  <svg width="120" height="120" viewBox="0 0 120 120" class="codesandbox-svg" xmlns="http://www.w3.org/2000/svg">
     <path
       fill-rule="evenodd"
       clip-rule="evenodd"

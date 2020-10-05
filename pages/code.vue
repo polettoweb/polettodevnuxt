@@ -4,7 +4,7 @@
     <div
       v-for="(code, i) in codeData"
       :key="code.title"
-      :class="['border-gray-400 py-6 flex justify-between mx-auto', { 'bg-background-secondary': i % 2 == 0 }]"
+      :class="['py-6 flex justify-between mx-auto', { 'bg-background-secondary': i % 2 == 0 }]"
     >
       <div class="w-1/5 flex justify-center items-center">
         <codepen v-if="code.type === 'codepen'" />
@@ -44,7 +44,17 @@
 import codeData from '../assets/json/code.json'
 
 export default {
-  metaInfo: {
+  components: {
+    codepen: () => import('../components/partials/codepen'),
+    codesandbox: () => import('../components/partials/codesandbox'),
+    github: () => import('../components/partials/github'),
+  },
+  data() {
+    return {
+      codeData,
+    }
+  },
+  head: {
     title: 'Code | Poletto.dev | Marco Poletto | Web Developer | Mentor',
     meta: [
       { charset: 'utf-8' },
@@ -59,16 +69,6 @@ export default {
           'Marco Poletto Frontend Web Developer, Tech enthusiast, Coffee aficionado, Gamer, mentor, tutor, code, workshop',
       },
     ],
-  },
-  components: {
-    codepen: () => import('../components/partials/codepen'),
-    codesandbox: () => import('../components/partials/codesandbox'),
-    github: () => import('../components/partials/github'),
-  },
-  data() {
-    return {
-      codeData,
-    }
   },
 }
 </script>

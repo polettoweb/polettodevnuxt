@@ -43,38 +43,38 @@ export default {
     image: {
       type: String,
       required: true,
-      default: defaultImage
+      default: defaultImage,
     },
     text: {
       type: String,
-      required: true
+      required: true,
     },
     link: {
       type: String,
-      required: true
+      required: true,
     },
     linkTitle: {
       type: String,
-      required: true
+      required: true,
     },
     linkGit: {
       type: String,
-      required: false
+      required: false,
     },
     tags: {
       type: Array,
       required: true,
-      validator: (prop) => prop.length > 0
+      validator: prop => prop.length > 0,
     },
     linkGitTitle: {
       type: String,
-      required: false
-    }
+      required: false,
+    },
   },
   data() {
     return {
-      defaultImage
+      defaultImage,
     }
-  }
+  },
 }
 </script>

@@ -4,8 +4,7 @@
       :class="[
         'pagination',
         {
-          'text-gray-400 hover:text-gray-400 cursor-not-allowed disabled':
-            page < 1,
+          'text-gray-400 hover:text-gray-400 cursor-not-allowed disabled': page < 1,
         },
       ]"
       @click="onPrev"
@@ -17,8 +16,7 @@
       :class="[
         'pagination',
         {
-          'text-gray-400 hover:text-gray-400 cursor-not-allowed disabled':
-            page >= Math.floor(length / 5),
+          'text-gray-400 hover:text-gray-400 cursor-not-allowed disabled': page >= Math.floor(length / 5),
         },
       ]"
       @click="onNext"

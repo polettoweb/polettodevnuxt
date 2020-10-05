@@ -1,48 +1,27 @@
 <template>
   <div>
     <transition name="slide">
-      <div
-        :class="{ right: right }"
-        v-if="isSideBarOpen"
-        :style="{ width: this.width }"
-        class="bm-menu"
-      >
+      <div v-if="isSideBarOpen" :class="{ right: right }" :style="{ width: this.width }" class="bm-menu">
         <slot></slot>
 
-        <span
-          @click="closeMenu"
-          v-if="this.crossIcon"
-          class="bm-cross-button cross-style"
-          data-cy="cross"
-        >
+        <span v-if="this.crossIcon" class="bm-cross-button cross-style" data-cy="cross" @click="closeMenu">
           <span class="bm-cross"></span>
           <span class="bm-cross"></span>
         </span>
       </div>
     </transition>
 
-    <div
-      :class="{ right: right }"
-      @click="openMenu"
-      v-if="this.burgerIcon"
-      class="bm-burger-button"
-      data-cy="burger"
-    >
+    <div v-if="this.burgerIcon" :class="{ right: right }" class="bm-burger-button" data-cy="burger" @click="openMenu">
       <span
-        :style="{ top: 20 * (index * 2) + '%' }"
         v-for="(x, index) in 3"
         :key="index"
+        :style="{ top: 20 * (index * 2) + '%' }"
         class="bm-burger-bars line-style"
       ></span>
     </div>
 
     <transition name="fade">
-      <div
-        @click="closeMenu"
-        v-if="isSideBarOpen && !this.noOverlay"
-        class="bm-overlay"
-        data-cy="overlay"
-      ></div>
+      <div v-if="isSideBarOpen && !this.noOverlay" class="bm-overlay" data-cy="overlay" @click="closeMenu"></div>
     </transition>
   </div>
 </template>
@@ -53,50 +32,50 @@ export default {
   name: 'Menu',
   computed: {
     ...mapState({
-      isSideBarOpen: (state) => state.isSideBarOpen
-    })
+      isSideBarOpen: state => state.isSideBarOpen,
+    }),
   },
   props: {
     isOpen: {
       type: Boolean,
       required: false,
-      default: false
+      default: false,
     },
     right: {
       type: Boolean,
-      required: false
+      required: false,
     },
     width: {
       type: [String, Number],
       required: false,
-      default: '100vw'
+      default: '100vw',
     },
     disableEsc: {
       type: Boolean,
-      required: false
+      required: false,
     },
     noOverlay: {
       type: Boolean,
-      required: false
+      required: false,
     },
     onStateChange: {
       type: Function,
-      required: false
+      required: false,
     },
     burgerIcon: {
       type: Boolean,
       required: false,
-      default: true
+      default: true,
     },
     crossIcon: {
       type: Boolean,
       required: false,
-      default: true
+      default: true,
     },
     autoClose: {
       type: [String, Number],
-      required: false
-    }
+      required: false,
+    },
   },
   methods: {
     ...mapMutations(['externalOpenMenu', 'externalCloseMenu']),
@@ -118,7 +97,7 @@ export default {
       if (window.innerWidth <= this.autoClose) {
         this.closeMenu()
       }
-    }
+    },
   },
   watch: {
     isOpen: {
@@ -131,8 +110,8 @@ export default {
         if (oldValue && !newValue) {
           this.closeMenu()
         }
-      }
-    }
+      },
+    },
   },
   mounted() {
     if (!this.disableEsc) {
@@ -149,7 +128,7 @@ export default {
     if (this.autoClose) {
       window.removeEventListener('keyup', this.autoCloseMenu)
     }
-  }
+  },
 }
 </script>
 

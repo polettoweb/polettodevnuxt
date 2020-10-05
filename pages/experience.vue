@@ -27,7 +27,15 @@
 import resumeData from '@/assets/json/resume.json'
 import ExpCard from '@/components/partials/ExpCard'
 export default {
-  metaInfo: {
+  components: {
+    ExpCard,
+  },
+  data() {
+    return {
+      resumeData,
+    }
+  },
+  head: {
     title: 'Resume | CV | Poletto.dev | Marco Poletto | Web Developer | Mentor',
     meta: [
       { charset: 'utf-8' },
@@ -42,14 +50,6 @@ export default {
           'Marco Poletto Frontend Web Developer, Tech enthusiast, Coffee aficionado, Gamer, mentor, tutor, resume, cv',
       },
     ],
-  },
-  components: {
-    ExpCard,
-  },
-  data() {
-    return {
-      resumeData,
-    }
   },
 }
 </script>

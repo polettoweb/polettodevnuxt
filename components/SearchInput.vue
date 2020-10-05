@@ -6,6 +6,9 @@
       <input
         ref="search"
         v-model="query"
+        type="text"
+        placeholder='Search (Press  "/" to focus)'
+        class="bg-background-form border border-gray-500 rounded-full px-4 pl-10 py-2 outline-none focus:border-green-500 w-80"
         @input="softReset"
         @keyup="performSearch"
         @keyup.esc="searchResultsVisible = false"
@@ -14,18 +17,9 @@
         @keyup.enter="gotoLink"
         @blur="searchResultsVisible = false"
         @focus="searchResultsVisible = true"
-        type="text"
-        placeholder='Search (Press  "/" to focus)'
-        class="bg-background-form border border-gray-500 rounded-full px-4 pl-10 py-2 outline-none focus:border-green-500 w-80"
       />
-      <div class="absolute top-0 ml-3" style="top:10px">
-        <svg
-          fill="currentColor"
-          class="text-gray-500 h-5 w-5"
-          viewBox="0 0 24 24"
-          width="24"
-          height="24"
-        >
+      <div class="absolute top-0 ml-3" style="top: 10px">
+        <svg fill="currentColor" class="text-gray-500 h-5 w-5" viewBox="0 0 24 24" width="24" height="24">
           <path
             class="heroicon-ui"
             d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"
@@ -34,9 +28,9 @@
       </div>
       <div
         v-if="query.length > 0"
-        @click="reset"
         class="absolute top-0 right-0 text-2xl mr-3 cursor-pointer text-gray-600 hover:text-gray-800"
-        style="top:2px;"
+        style="top: 2px"
+        @click="reset"
       >
         &times;
       </div>
@@ -52,21 +46,16 @@
             v-for="(post, index) in results"
             :key="index"
             :href="post.item.path"
-            @click="reset"
             :class="{ 'search-highlighted': index === highlightedIndex }"
             class="bg-background-form border-b border-gray-400 text-xl cursor-pointer p-4 search-hover"
+            @click="reset"
           >
             {{ post.item.title }}
 
-            <span class="block font-normal text-copy-primary text-sm my-1">{{
-              post.item.summary
-            }}</span>
+            <span class="block font-normal text-copy-primary text-sm my-1">{{ post.item.summary }}</span>
           </a>
 
-          <div
-            v-if="results.length === 0"
-            class="bg-background-form font-normal w-full border-b cursor-pointer p-4"
-          >
+          <div v-if="results.length === 0" class="bg-background-form font-normal w-full border-b cursor-pointer p-4">
             <p class="my-0">
               No results for '<strong>{{ query }}</strong
               >'
@@ -92,7 +81,7 @@ import SearchFocus from './SearchFocus'
 
 export default {
   components: {
-    SearchFocus
+    SearchFocus,
   },
   data() {
     return {
@@ -109,16 +98,16 @@ export default {
         distance: 500,
         maxPatternLength: 32,
         minMatchCharLength: 1,
-        keys: ['title', 'summary']
-      }
+        keys: ['title', 'summary'],
+      },
     }
   },
   created() {
     axios(this.$static.metaData.pathPrefix + '/search.json')
-      .then((response) => {
+      .then(response => {
         this.posts = response.data
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(error)
       })
   },
@@ -132,7 +121,7 @@ export default {
       this.searchResultsVisible = true
     },
     performSearch() {
-      this.$search(this.query, this.posts, this.options).then((results) => {
+      this.$search(this.query, this.posts, this.options).then(results => {
         this.results = results
       })
     },
@@ -150,7 +139,7 @@ export default {
     },
     scrollIntoView() {
       this.$refs.results.children[this.highlightedIndex].scrollIntoView({
-        block: 'nearest'
+        block: 'nearest',
       })
     },
     gotoLink() {
@@ -162,8 +151,8 @@ export default {
       if (e.key === '/') {
         this.$refs.search.focus()
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

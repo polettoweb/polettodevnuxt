@@ -21,7 +21,7 @@
         </h1>
       </div>
       <img
-        v-if="$colorMode === 'dark-theme'"
+        v-if="$colorMode.value === 'dark-theme'"
         class="lg:w-2/5 hidden lg:inline-block relative z-10"
         src="@/assets/images/marco-exa.png"
       />
@@ -85,22 +85,6 @@
 
 <script>
 export default {
-  metaInfo: {
-    title: 'Home | Poletto.dev | Marco Poletto | Web Developer | Mentor',
-    meta: [
-      { charset: 'utf-8' },
-      {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1',
-      },
-      { name: 'author', content: 'Marco Poletto Web Developer' },
-      {
-        name: 'description',
-        content:
-          'Marco Poletto Frontend Web Developer, UI Engineer, Tech enthusiast, Coffee aficionado, Gamer, mentor, tutor',
-      },
-    ],
-  },
   components: {
     VueTyper: () => import('vue-typer').then(m => m.VueTyper),
   },
@@ -130,6 +114,22 @@ export default {
     formatTime(time) {
       return Math.ceil(time / 60000)
     },
+  },
+  head: {
+    title: 'Home | Poletto.dev | Marco Poletto | Web Developer | Mentor',
+    meta: [
+      { charset: 'utf-8' },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1',
+      },
+      { name: 'author', content: 'Marco Poletto Web Developer' },
+      {
+        name: 'description',
+        content:
+          'Marco Poletto Frontend Web Developer, UI Engineer, Tech enthusiast, Coffee aficionado, Gamer, mentor, tutor',
+      },
+    ],
   },
 }
 </script>

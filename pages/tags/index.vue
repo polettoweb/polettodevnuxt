@@ -35,5 +35,21 @@ export default {
       return array.filter((a, b) => array.indexOf(a) === b)
     },
   },
+  head: {
+    title: 'Tags | Poletto.dev | Marco Poletto | Web Developer | Mentor',
+    meta: [
+      { charset: 'utf-8' },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1',
+      },
+      { name: 'author', content: 'Marco Poletto Web Developer' },
+      {
+        name: 'description',
+        content:
+          'Marco Poletto Frontend Web Developer, Tech enthusiast, Coffee aficionado, Gamer, mentor, tutor, blog, articles',
+      },
+    ],
+  },
 }
 </script>

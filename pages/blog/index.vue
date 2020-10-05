@@ -2,7 +2,11 @@
   <div class="container-inner mx-auto my-16">
     <h1 class="text-4xl font-bold mb-8 pb-4 border-b border-copy-secondary">Blog</h1>
     <div class="container-inner mx-auto py-16">
-      <div v-for="article in articles.slice(page * 5, page * 5 + 4)" :key="article.id" class="mb-12">
+      <div
+        v-for="(article, i) in articles.slice(page * 5, page * 5 + 4)"
+        :key="article.id"
+        :class="['mb-12 p-6', { 'bg-background-secondary': i % 2 == 0 }]"
+      >
         <h2 class="text-2xl">
           <nuxt-link :to="article.path" class="text-copy-primary hover:text-copy-secondary">
             {{ article.title }}
@@ -68,6 +72,22 @@ export default {
         .skip(this.page * 5 + 5)
         .fetch()
     },
+  },
+  head: {
+    title: 'Blogs | Poletto.dev | Marco Poletto | Web Developer | Mentor',
+    meta: [
+      { charset: 'utf-8' },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1',
+      },
+      { name: 'author', content: 'Marco Poletto Web Developer' },
+      {
+        name: 'description',
+        content:
+          'Marco Poletto Frontend Web Developer, Tech enthusiast, Coffee aficionado, Gamer, mentor, tutor, blog, articles',
+      },
+    ],
   },
 }
 </script>
