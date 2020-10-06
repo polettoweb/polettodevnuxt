@@ -1,5 +1,5 @@
 <template>
-  <section class="container-inner mx-auto py-16">
+  <section class="container mx-auto py-16">
     <h1 class="text-4xl font-bold mb-8 pb-4 border-b border-copy-secondary">Experience</h1>
     <div class="experience__container flex flex-col py-0 px-5">
       <p class="experience__intro text-copy-primary" data-cy="experience__intro">

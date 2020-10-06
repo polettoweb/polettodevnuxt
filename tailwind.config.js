@@ -24,58 +24,14 @@ module.exports = {
         secondary: 'var(--bg-background-secondary)',
         tertiary: 'var(--text-copy-secondary)',
       },
-
       copy: {
         primary: 'var(--text-copy-primary)',
         secondary: 'var(--text-copy-secondary)',
         tertiary: 'var(--bg-background-primary)',
       },
-
-      'border-color': {
-        primary: 'var(--border-border-color-primary)',
-      },
-
       transparent: 'transparent',
-
       black: '#000',
       white: '#fff',
-
-      green: {
-        100: '#f0fff4',
-        200: '#c6f6d5',
-        300: '#9ae6b4',
-        400: '#68d391',
-        500: '#48bb78',
-        600: '#38a169',
-        700: '#2f855a',
-        800: '#276749',
-        900: '#22543d',
-      },
-
-      gray: {
-        100: '#f7fafc',
-        200: '#edf2f7',
-        300: '#e2e8f0',
-        400: '#cbd5e0',
-        500: '#a0aec0',
-        600: '#718096',
-        700: '#4a5568',
-        800: '#2d3748',
-        900: '#1a202c',
-      },
-
-      blue: {
-        100: '#EBF8FF',
-        200: '#BEE3F8',
-        300: '#90CDF4',
-        400: '#63B3ED',
-        500: '#4299E1',
-        600: '#3182CE',
-        700: '#2B6CB0',
-        800: '#2C5282',
-        900: '#2A4365',
-        1000: '#0d2438',
-      },
     },
     fontFamily: {
       sans: [
@@ -98,5 +54,40 @@ module.exports = {
   variants: {
     // Some useful comment
   },
-  plugins: [],
+  plugins: [
+    function ({ addComponents }) {
+      addComponents({
+        '.container': {
+          maxWidth: '100%',
+          '@screen sm': {
+            maxWidth: '600px',
+          },
+          '@screen md': {
+            maxWidth: '700px',
+          },
+          '@screen lg': {
+            maxWidth: '800px',
+          },
+          '@screen xl': {
+            maxWidth: '1040px',
+          },
+        },
+        '.blog': {
+          maxWidth: '750px',
+          '@screen sm': {
+            maxWidth: '500px',
+          },
+          '@screen md': {
+            maxWidth: '550px',
+          },
+          '@screen lg': {
+            maxWidth: '600px',
+          },
+          '@screen xl': {
+            maxWidth: '750px',
+          },
+        },
+      })
+    },
+  ],
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="container-inner mx-auto my-16">
+  <div class="container mx-auto my-16">
     <h2 class="text-4xl font-bold mb-8 border-b">
       Articles: <span>with tag {{ params.tag.toUpperCase() }}</span>
     </h2>

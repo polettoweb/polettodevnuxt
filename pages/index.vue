@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="hero container-inner mx-auto flex flex-col lg:flex-row flex-wrap justify-between pt-16 pb-24">
+    <div class="hero container mx-auto flex flex-col lg:flex-row flex-wrap justify-between pt-16 pb-24">
       <div class="text-4xl font-bold w-full lg:w-3/5 items-center text-center lg:text-left pb-8">
         <h1 class="font-normal">
           <span class="leading-tight">Hi, I'm Marco,</span>

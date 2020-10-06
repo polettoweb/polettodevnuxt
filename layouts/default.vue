@@ -1,9 +1,7 @@
 <template>
   <div
-    :class="[
-      'content-wrapper bg-background-primary font-sans text-copy-primary leading-normal flex flex-col min-h-screen relative overflow-hidden',
-      theme,
-    ]"
+    class="content-wrapper bg-background-primary font-sans text-copy-primary leading-normal flex flex-col min-h-screen relative overflow-hidden"
+    :class="theme === 'null' ? 'light-theme' : 'dark-theme'"
   >
     <Header>
       <template v-slot:logo>
@@ -40,7 +38,7 @@ export default {
   },
   computed: {
     theme() {
-      return this.$colorMode.value
+      return this.$colorMode.value == null ? 'light-theme' : this.$colorMode.value
     },
   },
 }

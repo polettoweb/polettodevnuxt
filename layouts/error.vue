@@ -1,6 +1,6 @@
 <template>
   <div class="flex-grow">
-    <div class="container-inner mx-auto py-16">
+    <div class="container mx-auto py-16">
       <h2 class="text-4xl font-bold mb-16">Page Not Found</h2>
       <img src="../assets/images/404.svg" />
     </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="container-inner mx-auto my-16 article-container">
+  <div class="container blog mx-auto my-16 article-container">
     <div class="py-8 px-10">
       <h1 class="text-4xl leading-tight">{{ article.title }}</h1>
       <div class="text-copy-secondary mb-4 uppercase text-md">
