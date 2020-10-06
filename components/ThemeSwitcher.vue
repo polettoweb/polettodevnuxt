@@ -44,8 +44,7 @@ export default {
   },
   methods: {
     toggleTheme() {
-      this.$colorMode.preference =
-        this.$colorMode.value === 'light-theme' || this.$colorMode.value === 'null' ? 'dark-theme' : 'light-theme'
+      this.$colorMode.preference = this.$colorMode.preference !== 'dark-theme' ? 'dark-theme' : 'light-theme'
     },
   },
 }

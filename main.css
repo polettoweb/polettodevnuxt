@@ -2,18 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --text-copy-secondary:  rgb(62, 176, 239);
-}
 
-.dark-theme-mode {
+.dark-theme {
   --bg-background-primary: rgb(9, 10, 11);
   --bg-background-secondary: rgb(25, 27, 31);
   --text-copy-primary: rgba(255, 255, 255, 0.85);
   --text-copy-secondary:  rgb(62, 176, 239);
 }
 
-.light-theme-mode {
+.light-theme {
   --bg-background-primary: white;
   --bg-background-secondary: rgb(247,250,252);
   --text-copy-primary: rgb(45,55,72);

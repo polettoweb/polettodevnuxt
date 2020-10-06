@@ -60,6 +60,10 @@ export default {
       return files.map(file => (file.path === '/index' ? '/' : file.path))
     },
   },
+  colorMode: {
+    // preference: 'light-theme',
+    // fallback: 'light-theme',
+  },
   /*
    ** Build configuration
    */
