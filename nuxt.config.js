@@ -27,7 +27,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  // plugins: ['~plugins/vue-js-toggle-button'],
+  plugins: [],
   /*
    ** Nuxt.js dev-modules
    */
@@ -41,8 +41,15 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/pwa', '@nuxt/content'],
+  modules: ['@nuxtjs/pwa', '@nuxt/content', '@nuxtjs/sitemap'],
   content: {},
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: 'https://poletto.dev/',
+    cacheTime: 100 * 60 * 15,
+    gzip: true,
+    generate: false,
+  },
   hooks: {
     'content:file:beforeInsert': document => {
       if (document.extension === '.md') {
@@ -59,10 +66,6 @@ export default {
 
       return files.map(file => (file.path === '/index' ? '/' : file.path))
     },
-  },
-  colorMode: {
-    // preference: 'light-theme',
-    // fallback: 'light-theme',
   },
   /*
    ** Build configuration
