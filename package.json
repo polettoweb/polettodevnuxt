@@ -18,7 +18,7 @@
     "@nuxtjs/pwa": "^3.0.2",
     "@nuxtjs/sitemap": "^2.4.0",
     "frontmatter-markdown-loader": "^3.6.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "nuxt": "^2.14.6",
     "reading-time": "^1.2.0",
     "sass-loader": "^10.0.2",
